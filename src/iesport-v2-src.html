@@ -150,21 +150,15 @@ img{max-width:100%;display:block}
   display:flex;align-items:center;justify-content:center;
   pointer-events:none;
 }
-.hero-art svg{height:86%;max-height:620px;width:auto;overflow:visible}
-.hero-art .ring{fill:none;stroke:rgba(217,164,65,.13);stroke-width:1}
-.hero-art .ring-b{stroke:rgba(147,157,174,.12)}
-.hero-art .fig{fill:rgba(227,232,240,.09)}
-.hero-dot{pointer-events:auto;cursor:pointer;outline-offset:4px}
-.hero-dot .core{fill:var(--dc)}
-.hero-dot .halo{
-  fill:var(--dc);opacity:.16;
-  transform-box:fill-box;transform-origin:center;
-  animation:heroPulse 3.4s ease-in-out infinite;
-  animation-delay:var(--dd,0s);
-}
-.hero-dot:hover .core,.hero-dot:focus-visible .core{stroke:#fff;stroke-width:2}
-@keyframes heroPulse{0%,100%{transform:scale(1);opacity:.16}50%{transform:scale(1.85);opacity:.05}}
-@media(prefers-reduced-motion:reduce){.hero-dot .halo{animation:none}}
+.hero-art svg{height:92%;max-height:660px;width:auto;overflow:visible}
+.cring{fill:none}
+.cring-gold{stroke:rgba(217,164,65,.32);stroke-width:1.2}
+.cring-steel{stroke:rgba(147,157,174,.17);stroke-width:1}
+.cring-dash{stroke:rgba(122,150,205,.4);stroke-width:1.5;stroke-dasharray:2 15;stroke-linecap:round}
+.cring-arc{stroke:var(--gold);stroke-opacity:.7;stroke-width:2.6;stroke-linecap:round}
+.crest-spin{transform-origin:320px 320px;animation:crestSpin 110s linear infinite}
+@keyframes crestSpin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.crest-spin{animation:none}}
 .hero .wrap{position:relative;z-index:2;padding-top:96px}
 .hero-inner{max-width:640px;padding-bottom:10px}
 @media(max-width:960px){
@@ -193,11 +187,24 @@ img{max-width:100%;display:block}
 .esp-head{grid-area:head;min-width:0;align-self:start}
 .esp-cards-col{grid-area:cards;min-width:0}
 .esp-stage-panel{
-  grid-area:panel;
-  background:radial-gradient(480px 380px at 50% 24%, #1B3567 0%, rgba(27,53,103,0) 70%), var(--navy-deep);
-  border-radius:10px;padding:12px 12px 16px;box-shadow:var(--shadow);
-  display:flex;flex-direction:column;gap:10px;
+  grid-area:panel;position:relative;
+  display:flex;flex-direction:column;gap:6px;
 }
+/* modelo flutua sobre a secao: brilho navy + aneis azuis atras, sombra no chao */
+.stage-backdrop{position:absolute;inset:0;z-index:0;pointer-events:none}
+.stage-backdrop::before{
+  content:"";position:absolute;left:50%;top:45%;width:min(150%,600px);aspect-ratio:1;
+  transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(closest-side, rgba(15,34,67,.5), rgba(15,34,67,.16) 58%, transparent 76%);
+}
+.stage-backdrop::after{
+  content:"";position:absolute;left:50%;bottom:5.5%;width:54%;height:26px;
+  transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(closest-side, rgba(10,23,48,.30), transparent 72%);
+}
+.sb-ring{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);border-radius:50%;aspect-ratio:1}
+.sb-r1{width:min(80%,400px);border:1px solid rgba(79,163,240,.30)}
+.sb-r2{width:min(106%,540px);border:1px solid rgba(74,99,176,.2)}
 .esp-cards-col .esp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:1060px){.esp-layout{grid-template-columns:minmax(0,1fr) 340px}}
 @media(max-width:960px){
@@ -205,15 +212,17 @@ img{max-width:100%;display:block}
 }
 @media(max-width:640px){.esp-cards-col .esp-grid{grid-template-columns:1fr}}
 .stage{
-  position:relative;flex:1 1 auto;min-height:440px;
+  position:relative;z-index:1;flex:1 1 auto;min-height:440px;
   cursor:grab;touch-action:pan-y;
 }
 @media(max-width:960px){
   .stage{flex:none;min-height:0;height:clamp(320px,44vh,400px);height:clamp(320px,42svh,400px)}
 }
 .stage.grabbing{cursor:grabbing}
-/* absoluto: o canvas nao pode participar da altura intrinseca do painel (loop de layout) */
-.stage canvas{position:absolute;inset:0;width:100%;height:100%}
+/* absoluto: o canvas nao pode participar da altura intrinseca do painel (loop de layout);
+   sangra alem da coluna para os bracos nunca cortarem na borda (fundo transparente) */
+.stage canvas{position:absolute;top:0;bottom:0;left:-44px;width:calc(100% + 88px);height:100%}
+@media(max-width:960px){.stage canvas{left:0;width:100%}}
 .stage-tip{
   position:absolute;pointer-events:none;z-index:5;
   transform:translate(-50%,-130%);
@@ -225,8 +234,9 @@ img{max-width:100%;display:block}
 .stage-tip .tt-r{display:block;font-size:.8rem;font-weight:800;letter-spacing:.02em;color:var(--white)}
 .stage-tip .tt-d{display:block;font-size:.68rem;font-weight:600;color:var(--steel-soft)}
 .stage-hint{
+  position:relative;z-index:1;
   text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--steel-soft);
+  text-transform:uppercase;color:var(--steel-ink);
 }
 .legend i{width:9px;height:9px;border-radius:50%;background:var(--lc,#fff)}
 .stage-fallback{display:none;height:100%;align-items:center;justify-content:center}
@@ -284,7 +294,7 @@ img{max-width:100%;display:block}
 }
 
 /* ---------- especialidades ---------- */
-.esp{background:var(--mist)}
+.esp{background:var(--mist);overflow:hidden}
 .esp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 @media(max-width:1000px){.esp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.esp-grid{grid-template-columns:1fr}}
@@ -625,31 +635,36 @@ footer{background:var(--navy);color:var(--steel-soft)}
       <span><b>10 subespecialidades</b></span>
     </p>
   </div>
-  <div class="hero-art">
-    <svg viewBox="0 0 220 470" role="group" aria-label="Regiões do corpo atendidas no IESPORT">
-      <g aria-hidden="true">
-        <circle class="ring" cx="110" cy="232" r="148"/>
-        <circle class="ring ring-b" cx="110" cy="232" r="200"/>
-        <circle class="ring" cx="110" cy="232" r="258"/>
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 640 640">
+      <defs>
+        <radialGradient id="crestHalo" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#264573" stop-opacity=".5"/>
+          <stop offset="55%" stop-color="#1B3260" stop-opacity=".2"/>
+          <stop offset="100%" stop-color="#1B3260" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="embG" cx="32%" cy="26%" r="90%">
+          <stop offset="0%" stop-color="#23447B"/>
+          <stop offset="48%" stop-color="#14294E"/>
+          <stop offset="100%" stop-color="#081226"/>
+        </radialGradient>
+        <clipPath id="embClip"><circle cx="193.5" cy="217.5" r="184.5"/></clipPath>
+      </defs>
+      <circle cx="320" cy="320" r="318" fill="url(#crestHalo)"/>
+      <g class="crest-spin">
+        <circle class="cring cring-dash" cx="320" cy="320" r="296"/>
       </g>
-      <g class="fig" aria-hidden="true">
-        <circle cx="110" cy="38" r="25"/>
-        <rect x="100" y="60" width="20" height="16" rx="7"/>
-        <rect x="66" y="72" width="88" height="122" rx="30"/>
-        <rect x="36" y="80" width="22" height="142" rx="11" transform="rotate(7 47 80)"/>
-        <rect x="162" y="80" width="22" height="142" rx="11" transform="rotate(-7 173 80)"/>
-        <rect x="70" y="180" width="80" height="48" rx="20"/>
-        <rect x="72" y="222" width="32" height="182" rx="16"/>
-        <rect x="116" y="222" width="32" height="182" rx="16"/>
-        <ellipse cx="86" cy="412" rx="24" ry="10"/>
-        <ellipse cx="134" cy="412" rx="24" ry="10"/>
+      <circle class="cring cring-steel" cx="320" cy="320" r="252"/>
+      <circle class="cring cring-gold" cx="320" cy="320" r="208"/>
+      <path class="cring cring-arc" d="M 222.4,503.7 A 208,208 0 0 1 120,262.7"/>
+      <g transform="translate(320,324) scale(0.809) translate(-193.5,-217.5)">
+        <circle cx="193.5" cy="217.5" r="185.5" fill="url(#embG)"/>
+        <g clip-path="url(#embClip)" fill="#fff">
+          <circle cx="193.5" cy="220" r="64"/>
+          <path d="M 117,311 L 117,283 A 8.3,7 0 0 1 133.5,283 A 87,87 0 0 0 253.5,283 A 8.3,7 0 0 1 270,283 L 270,311 A 4,4 0 0 1 266,315 L 241,315 A 14,14 0 0 0 227,329 L 227,404 L 160,404 L 160,329 A 14,14 0 0 0 146,315 L 121,315 A 4,4 0 0 1 117,311 Z"/>
+        </g>
+        <circle cx="193.5" cy="217.5" r="185.5" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="2"/>
       </g>
-      <a class="hero-dot" href="#esp-ombro" style="--dc:#4FA3F0" aria-label="Ombro e cotovelo"><circle class="halo" cx="63" cy="86" r="13"/><circle class="core" cx="63" cy="86" r="6"/></a>
-      <a class="hero-dot" href="#esp-coluna" style="--dc:#9C7FF0;--dd:.5s" aria-label="Coluna vertebral"><circle class="halo" cx="110" cy="135" r="13"/><circle class="core" cx="110" cy="135" r="6"/></a>
-      <a class="hero-dot" href="#esp-mao" style="--dc:#2BC4B2;--dd:1s" aria-label="Mão e punho"><circle class="halo" cx="193" cy="216" r="13"/><circle class="core" cx="193" cy="216" r="6"/></a>
-      <a class="hero-dot" href="#esp-quadril" style="--dc:#7E9AE6;--dd:1.5s" aria-label="Quadril"><circle class="halo" cx="78" cy="200" r="13"/><circle class="core" cx="78" cy="200" r="6"/></a>
-      <a class="hero-dot" href="#esp-joelho" style="--dc:#C98FD1;--dd:2s" aria-label="Joelho"><circle class="halo" cx="88" cy="312" r="13"/><circle class="core" cx="88" cy="312" r="6"/></a>
-      <a class="hero-dot" href="#esp-pe" style="--dc:#4FC3E8;--dd:2.5s" aria-label="Pé e tornozelo"><circle class="halo" cx="86" cy="398" r="13"/><circle class="core" cx="86" cy="398" r="6"/></a>
     </svg>
   </div>
 </header>
@@ -667,12 +682,13 @@ footer{background:var(--navy);color:var(--steel-soft)}
       </div>
 
       <div class="esp-stage-panel rv">
+        <div class="stage-backdrop" aria-hidden="true"><i class="sb-ring sb-r1"></i><i class="sb-ring sb-r2"></i></div>
         <div class="stage" id="stage" aria-hidden="true">
           <canvas id="body3d"></canvas>
           <div class="stage-tip" id="stageTip"><span class="tt-r" id="tipR"></span><span class="tt-d" id="tipD"></span></div>
           <div class="stage-fallback">
             <svg viewBox="0 0 220 470" aria-hidden="true">
-              <g fill="rgba(227,232,240,.16)">
+              <g fill="rgba(15,34,67,.15)">
                 <circle cx="110" cy="38" r="25"/>
                 <rect x="100" y="60" width="20" height="16" rx="7"/>
                 <rect x="66" y="72" width="88" height="122" rx="30"/>
@@ -1164,12 +1180,6 @@ var GLB_B64 = '{{GLB}}';
     clearTimeout(flashTimer);
     flashTimer = setTimeout(function(){ c.classList.remove('flash'); }, 2600);
   }
-  /* pontos do hero levam ao card da especialidade com o mesmo destaque do 3D */
-  document.querySelectorAll('.hero-dot').forEach(function(a){
-    a.addEventListener('click', function(ev){
-      goCard(a.getAttribute('href').slice(1), ev);
-    });
-  });
   /* Google Maps nativo com fallback para o mapa estatico (o preview bloqueia iframes externos) */
   (function(){
     var slot = document.getElementById('mapSlot');
@@ -1319,21 +1329,8 @@ var GLB_B64 = '{{GLB}}';
     }
 
     /* soft ground glow */
-    var gc = document.createElement('canvas'); gc.width = gc.height = 256;
-    var g = gc.getContext('2d');
-    var grad = g.createRadialGradient(128,128,10,128,128,120);
-    grad.addColorStop(0,'rgba(27,53,103,0.85)');
-    grad.addColorStop(1,'rgba(27,53,103,0)');
-    g.fillStyle = grad; g.fillRect(0,0,256,256);
-    var groundTex = new THREE.CanvasTexture(gc);
-    groundTex.encoding = THREE.sRGBEncoding;
-    var ground = new THREE.Mesh(
-      new THREE.PlaneGeometry(4.4, 4.4),
-      new THREE.MeshBasicMaterial({map:groundTex, transparent:true, depthWrite:false})
-    );
-    ground.rotation.x = -Math.PI/2;
-    ground.position.y = 0.005;
-    scene.add(ground);
+    /* sem plano de chao na cena: a sombra fica no CSS (.stage-backdrop::after),
+       porque o fundo do canvas agora e transparente sobre secao clara */
 
     /* glow sprite texture */
     var sc2 = document.createElement('canvas'); sc2.width = sc2.height = 128;
@@ -1356,9 +1353,10 @@ var GLB_B64 = '{{GLB}}';
           new THREE.MeshBasicMaterial({color:r.color})
         );
         mk.add(core);
+        /* blending normal: aditivo estoura em branco sobre fundo claro */
         var glow = new THREE.Sprite(new THREE.SpriteMaterial({
-          map:glowTex, color:r.color, transparent:true,
-          blending:THREE.AdditiveBlending, depthWrite:false
+          map:glowTex, color:r.color, transparent:true, opacity:0.55,
+          depthWrite:false
         }));
         glow.scale.set(0.42, 0.42, 1);
         mk.add(glow);
@@ -1446,13 +1444,13 @@ var GLB_B64 = '{{GLB}}';
 
     /* sizing */
     function resize(){
-      var w = stage.clientWidth, h = stage.clientHeight;
+      var w = canvas.clientWidth || stage.clientWidth, h = canvas.clientHeight || stage.clientHeight;
       if (!w || !h) return;
       renderer.setSize(w, h, false);
       camera.aspect = w / h;
       /* em canvas estreito e alto, afasta a camera para os bracos nao cortarem;
-         1.5 = largura de cena que precisa caber (envergadura + folga de giro) */
-      var zNeed = 1.75 / (2 * Math.tan(camera.fov * Math.PI / 360) * camera.aspect);
+         2.5 = envergadura real do modelo (1.98) + perspectiva + folga de giro */
+      var zNeed = 2.5 / (2 * Math.tan(camera.fov * Math.PI / 360) * camera.aspect);
       camera.position.z = Math.max(6.1, zNeed);
       var zf = camera.position.z / 6.1;
       markers.forEach(function(m){ m.root.scale.setScalar(zf); });
@@ -1502,10 +1500,12 @@ var GLB_B64 = '{{GLB}}';
     function placeTip(mk){
       mk.root.getWorldPosition(tipV);
       tipV.project(camera);
-      var rect = stage.getBoundingClientRect();
-      var x = (tipV.x + 1) / 2 * rect.width;
-      tip.style.left = Math.max(70, Math.min(rect.width - 70, x)) + 'px';
-      tip.style.top = Math.max(44, (-tipV.y + 1) / 2 * rect.height) + 'px';
+      /* projecao e relativa ao canvas, que sangra alem do stage */
+      var crect = canvas.getBoundingClientRect();
+      var srect = stage.getBoundingClientRect();
+      var x = (tipV.x + 1) / 2 * crect.width + (crect.left - srect.left);
+      tip.style.left = Math.max(70, Math.min(srect.width - 70, x)) + 'px';
+      tip.style.top = Math.max(44, (-tipV.y + 1) / 2 * crect.height) + 'px';
     }
 
     function endDrag(){
