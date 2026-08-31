@@ -41,9 +41,19 @@ def photo_data_uri(fname):
 
 html = SRC.read_text(encoding='utf-8')
 
-for name, token in (('logo.png', '{{LOGO}}'), ('logo-footer.png', '{{LOGOFOOT}}')):
-    b64 = base64.b64encode((ASSETS / name).read_bytes()).decode()
-    html = html.replace(token, 'data:image/png;base64,' + b64)
+# logo do nav: fonte 4x recortada no conteudo e reduzida (nitida em telas retina)
+lim = Image.open(ASSETS / 'logo_4x.png').convert('RGB')
+import PIL.ImageChops as _ch
+bbox = _ch.difference(lim, Image.new('RGB', lim.size, (255, 255, 255))).getbbox()
+lim = lim.crop(bbox)
+lim.thumbnail((2000, 200), Image.LANCZOS)
+lbuf = io.BytesIO()
+lim.save(lbuf, 'PNG', optimize=True)
+html = html.replace('{{LOGO}}', 'data:image/png;base64,' + base64.b64encode(lbuf.getvalue()).decode())
+print(f'logo nav {lim.size} ({len(lbuf.getvalue())/1024:.0f} KB)')
+
+b64 = base64.b64encode((ASSETS / 'logo-footer.png').read_bytes()).decode()
+html = html.replace('{{LOGOFOOT}}', 'data:image/png;base64,' + b64)
 
 three = (ASSETS / 'three.min.js').read_text(encoding='utf-8')
 assert '</script' not in three.lower(), 'three.min.js contem </script>'
