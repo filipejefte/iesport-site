@@ -192,7 +192,7 @@ img{max-width:100%;display:block}
 /* modelo flutua sobre a secao: brilho navy + aneis azuis atras, sombra no chao */
 .stage-backdrop{position:absolute;inset:0;z-index:0;pointer-events:none}
 .stage-backdrop::before{
-  content:"";position:absolute;left:50%;top:45%;width:min(150%,600px);aspect-ratio:1;
+  content:"";position:absolute;left:50%;top:50%;width:min(150%,600px);aspect-ratio:1;
   transform:translate(-50%,-50%);border-radius:50%;
   background:radial-gradient(closest-side, rgba(15,34,67,.5), rgba(15,34,67,.16) 58%, transparent 76%);
 }
@@ -202,7 +202,7 @@ img{max-width:100%;display:block}
   transform:translate(-50%,-50%);border-radius:50%;
   background:radial-gradient(closest-side, rgba(10,23,48,.30), transparent 72%);
 }
-.sb-ring{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);border-radius:50%;aspect-ratio:1}
+.sb-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;aspect-ratio:1}
 .sb-r1{width:min(80%,400px);border:1px solid rgba(79,163,240,.30)}
 .sb-r2{width:min(106%,540px);border:1px solid rgba(74,99,176,.2)}
 .esp-cards-col .esp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -234,10 +234,14 @@ img{max-width:100%;display:block}
 .stage-tip .tt-r{display:block;font-size:.8rem;font-weight:800;letter-spacing:.02em;color:var(--white)}
 .stage-tip .tt-d{display:block;font-size:.68rem;font-weight:600;color:var(--steel-soft)}
 .stage-hint{
-  position:relative;z-index:1;
+  /* ancorado logo abaixo dos pes do modelo (--feety vem da projecao 3D),
+     sem nunca sair do painel */
+  position:absolute;left:0;right:0;z-index:1;
+  top:min(calc(var(--feety, 86%) + 24px), calc(100% - 22px));
   text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.14em;
   text-transform:uppercase;color:var(--steel-ink);
 }
+@media(max-width:960px){.esp-stage-panel{padding-bottom:42px}}
 .legend i{width:9px;height:9px;border-radius:50%;background:var(--lc,#fff)}
 .stage-fallback{display:none;height:100%;align-items:center;justify-content:center}
 .stage-fallback svg{height:96%;width:auto}
