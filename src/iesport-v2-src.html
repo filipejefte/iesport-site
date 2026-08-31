@@ -97,8 +97,12 @@ img{max-width:100%;display:block}
 }
 .nav.scrolled{box-shadow:0 6px 24px -12px rgba(15,34,67,.28)}
 .nav .wrap{display:flex;align-items:center;gap:28px;padding-top:14px;padding-bottom:14px}
-.nav-logo{flex:none}
-.nav-logo img{height:52px;width:auto}
+.nav-logo{flex:none;display:flex;align-items:center;gap:11px;text-decoration:none}
+.nl-emblem{width:48px;height:48px;flex:none}
+.nl-text{display:flex;flex-direction:column;line-height:1.16;letter-spacing:.01em}
+.nl-1{font-size:.84rem;font-weight:500;color:var(--steel-ink)}
+.nl-1 i{font-style:normal;font-size:.72rem;font-weight:400}
+.nl-2{font-size:.94rem;font-weight:800;color:var(--navy)}
 .nav-links{display:flex;gap:26px;margin-left:auto;align-items:center}
 .nav-links a:not(.btn){
   font-size:.85rem;font-weight:700;letter-spacing:.05em;text-decoration:none;
@@ -131,7 +135,9 @@ img{max-width:100%;display:block}
   .nav-links a:not(.btn){display:inline-block;white-space:nowrap;padding:6px 0}
 }
 @media(max-width:640px){
-  .nav-logo img{height:44px}
+  .nl-emblem{width:42px;height:42px}
+  .nl-1{font-size:.76rem}
+  .nl-2{font-size:.85rem}
   .nav-links{gap:14px}
   .nav-sections{gap:20px}
 }
@@ -599,7 +605,28 @@ footer{background:var(--navy);color:var(--steel-soft)}
 <nav class="nav" id="nav" aria-label="Navegação principal">
   <div class="wrap">
     <a class="nav-logo" href="#topo" aria-label="IESPORT, Instituto de Especialidades Ortopédicas, voltar ao início">
-      <img src="{{LOGO}}" alt="IESPORT, Instituto de Especialidades Ortopédicas" width="240" height="114">
+      <svg class="nl-emblem" viewBox="0 0 400 400" aria-hidden="true">
+        <defs>
+          <radialGradient id="navEmbG" cx="32%" cy="26%" r="90%">
+            <stop offset="0%" stop-color="#23447B"/>
+            <stop offset="48%" stop-color="#14294E"/>
+            <stop offset="100%" stop-color="#081226"/>
+          </radialGradient>
+          <clipPath id="navEmbClip"><circle cx="193.5" cy="217.5" r="184.5"/></clipPath>
+        </defs>
+        <g transform="translate(6.5,-17.5)">
+          <circle cx="193.5" cy="217.5" r="185.5" fill="url(#navEmbG)"/>
+          <g clip-path="url(#navEmbClip)" fill="#fff">
+            <circle cx="193.5" cy="220" r="64"/>
+            <path d="M 117,311 L 117,283 A 8.3,7 0 0 1 133.5,283 A 87,87 0 0 0 253.5,283 A 8.3,7 0 0 1 270,283 L 270,311 A 4,4 0 0 1 266,315 L 241,315 A 14,14 0 0 0 227,329 L 227,404 L 160,404 L 160,329 A 14,14 0 0 0 146,315 L 121,315 A 4,4 0 0 1 117,311 Z"/>
+          </g>
+        </g>
+      </svg>
+      <span class="nl-text" aria-hidden="true">
+        <span class="nl-1">Instituto <i>de</i></span>
+        <span class="nl-1">Especialidades</span>
+        <span class="nl-2">Ortopédicas</span>
+      </span>
     </a>
     <div class="nav-links">
       <div class="nav-sections">
