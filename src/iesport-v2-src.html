@@ -1,0 +1,1612 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IESPORT · Instituto de Especialidades Ortopédicas · Marília, SP</title>
+<meta name="description" content="Ortopedia e traumatologia em Marília: oito ortopedistas, um subespecialista para cada região do corpo. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap">
+
+<style>
+:root{
+  --navy:#0F2243;
+  --navy-deep:#0A1730;
+  --navy-head:#0A1F3E;
+  --navy-2:#16264D;
+  --steel:#939DAE;
+  --steel-ink:#5F6B80;
+  --steel-soft:#C7CEDA;
+  --mist:#F3F4F5;
+  --ink:#1D2740;
+  --ink-2:#4E5A70;
+  --line:#DFE4EA;
+  --white:#FFFFFF;
+  --gold:#D9A441;
+  --gold-soft:#F0CE8A;
+  --gold-ink:#8F6512; /* dourado para TEXTO sobre branco (AA 5,2:1) */
+  --c-ombro:#2A72C0;
+  --c-mao:#0E8073;
+  --c-coluna:#7A5FD0;
+  --c-quadril:#4A63B0;
+  --c-joelho:#9A56A8;
+  --c-pe:#17758F;
+  --shadow:0 1px 2px rgba(15,34,67,.06), 0 14px 34px -22px rgba(15,34,67,.35);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:'Raleway','Helvetica Neue',Arial,sans-serif;
+  font-feature-settings:"lnum" 1;
+  font-size:16.5px;
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;line-height:1.12;letter-spacing:-.015em;text-wrap:balance;color:var(--navy)}
+p{margin:0}
+a{color:var(--navy);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2.5px solid var(--navy);outline-offset:3px}
+.hero :focus-visible,.sport :focus-visible,.cont-cta :focus-visible,.struct :focus-visible,footer :focus-visible{outline-color:var(--white)}
+img{max-width:100%;display:block}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+@media(max-width:640px){.wrap{padding:0 18px}}
+
+.eyebrow{
+  display:inline-block;
+  font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--steel-ink);
+}
+.sec{padding:96px 0;scroll-margin-top:calc(var(--navh, 80px) + 12px)}
+@media(max-width:760px){.sec{padding:64px 0}}
+.sec-head{display:flex;flex-direction:column;gap:14px;max-width:720px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.35rem);font-weight:800}
+.sec-head p{color:var(--ink-2);font-size:1.02rem;max-width:62ch}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+
+/* ---------- topbar ---------- */
+.topbar{background:var(--navy-head);color:var(--steel-soft)}
+.topbar .wrap{
+  display:flex;justify-content:space-between;gap:12px 28px;flex-wrap:wrap;
+  padding-top:9px;padding-bottom:9px;
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;
+}
+.topbar b{color:var(--white);font-weight:700}
+.topbar span{white-space:nowrap}
+@media(max-width:780px){.topbar .addr{display:none}.topbar .wrap{justify-content:center}}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:var(--white);
+  border-bottom:3px solid var(--steel);
+  transition:box-shadow .25s ease;
+}
+.nav.scrolled{box-shadow:0 6px 24px -12px rgba(15,34,67,.28)}
+.nav .wrap{display:flex;align-items:center;gap:28px;padding-top:14px;padding-bottom:14px}
+.nav-logo{flex:none}
+.nav-logo img{height:52px;width:auto}
+.nav-links{display:flex;gap:26px;margin-left:auto;align-items:center}
+.nav-links a:not(.btn){
+  font-size:.85rem;font-weight:700;letter-spacing:.05em;text-decoration:none;
+  color:var(--ink-2);padding:11px 0;border-bottom:2px solid transparent;
+}
+.nav-links a:not(.btn):hover{color:var(--navy);border-bottom-color:var(--steel)}
+.nav-links a[aria-current]{color:var(--navy);border-bottom-color:var(--steel)}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:inherit;font-size:.88rem;font-weight:700;letter-spacing:.04em;
+  padding:13px 24px;min-height:44px;border-radius:6px;border:1.5px solid transparent;
+  text-decoration:none;cursor:pointer;white-space:nowrap;
+  transition:background .18s ease,color .18s ease,border-color .18s ease,transform .12s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--navy-2)}
+.btn-white{background:var(--white);color:var(--navy)}
+.btn-white:hover{background:var(--mist)}
+.btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.45)}
+.btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.07)}
+.btn svg{flex:none;margin-left:-4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:960px){
+  .nav .wrap{flex-wrap:wrap;gap:12px 18px;padding-bottom:0}
+  .nav-links{gap:16px;margin-left:auto;flex-wrap:wrap;flex:1 1 auto;min-width:0}
+  .nav-links .btn{padding:10px 16px;min-height:40px;font-size:.8rem}
+  .nav-sections{order:3;width:100%;display:flex;gap:22px;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;padding:2px 2px 12px;margin:0 -2px}
+  .nav-links a:not(.btn){display:inline-block;white-space:nowrap;padding:6px 0}
+}
+@media(max-width:640px){
+  .nav-logo img{height:44px}
+  .nav-links{gap:14px}
+  .nav-sections{gap:20px}
+}
+@media(min-width:961px){.nav-sections{display:contents}}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(820px 620px at 82% 34%, #1B3567 0%, rgba(27,53,103,0) 66%),
+    linear-gradient(168deg, var(--navy-head) 0%, var(--navy-deep) 78%);
+  color:var(--white);
+}
+.hero-art{
+  position:absolute;top:0;bottom:0;right:0;width:44%;max-width:600px;z-index:3;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+}
+.hero-art svg{height:86%;max-height:620px;width:auto;overflow:visible}
+.hero-art .ring{fill:none;stroke:rgba(217,164,65,.13);stroke-width:1}
+.hero-art .ring-b{stroke:rgba(147,157,174,.12)}
+.hero-art .fig{fill:rgba(227,232,240,.09)}
+.hero-dot{pointer-events:auto;cursor:pointer;outline-offset:4px}
+.hero-dot .core{fill:var(--dc)}
+.hero-dot .halo{
+  fill:var(--dc);opacity:.16;
+  transform-box:fill-box;transform-origin:center;
+  animation:heroPulse 3.4s ease-in-out infinite;
+  animation-delay:var(--dd,0s);
+}
+.hero-dot:hover .core,.hero-dot:focus-visible .core{stroke:#fff;stroke-width:2}
+@keyframes heroPulse{0%,100%{transform:scale(1);opacity:.16}50%{transform:scale(1.85);opacity:.05}}
+@media(prefers-reduced-motion:reduce){.hero-dot .halo{animation:none}}
+.hero .wrap{position:relative;z-index:2;padding-top:96px}
+.hero-inner{max-width:640px;padding-bottom:10px}
+@media(max-width:960px){
+  .hero-art{display:none}
+  .hero .wrap{padding-top:64px}
+}
+@media(max-width:400px){
+  .stage-hint{letter-spacing:.08em;font-size:.68rem}
+}
+.hero .eyebrow{color:var(--steel)}
+.hero h1{
+  color:var(--white);
+  font-size:clamp(2.3rem,4.6vw,3.7rem);
+  font-weight:300;line-height:1.06;letter-spacing:-.02em;
+  margin:18px 0 22px;max-width:15ch;
+}
+.hero h1 b{font-weight:800}
+.hero-sub{color:var(--steel-soft);font-size:1.05rem;max-width:52ch;font-weight:400}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+
+/* --- 3D stage (painel na secao de especialidades) --- */
+.esp-layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:20px 30px;
+  grid-template-areas:"head panel" "cards panel";align-items:stretch;
+}
+.esp-head{grid-area:head;min-width:0;align-self:start}
+.esp-cards-col{grid-area:cards;min-width:0}
+.esp-stage-panel{
+  grid-area:panel;
+  background:radial-gradient(480px 380px at 50% 24%, #1B3567 0%, rgba(27,53,103,0) 70%), var(--navy-deep);
+  border-radius:10px;padding:12px 12px 16px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:10px;
+}
+.esp-cards-col .esp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:1060px){.esp-layout{grid-template-columns:minmax(0,1fr) 340px}}
+@media(max-width:960px){
+  .esp-layout{grid-template-columns:1fr;grid-template-areas:"head" "panel" "cards"}
+}
+@media(max-width:640px){.esp-cards-col .esp-grid{grid-template-columns:1fr}}
+.stage{
+  position:relative;flex:1 1 auto;min-height:440px;
+  cursor:grab;touch-action:pan-y;
+}
+@media(max-width:960px){
+  .stage{flex:none;min-height:0;height:clamp(320px,44vh,400px);height:clamp(320px,42svh,400px)}
+}
+.stage.grabbing{cursor:grabbing}
+/* absoluto: o canvas nao pode participar da altura intrinseca do painel (loop de layout) */
+.stage canvas{position:absolute;inset:0;width:100%;height:100%}
+.stage-tip{
+  position:absolute;pointer-events:none;z-index:5;
+  transform:translate(-50%,-130%);
+  background:rgba(10,23,48,.92);border:1px solid rgba(147,157,174,.4);
+  border-radius:6px;padding:7px 12px;white-space:nowrap;
+  opacity:0;transition:opacity .15s ease;
+}
+.stage-tip.on{opacity:1}
+.stage-tip .tt-r{display:block;font-size:.8rem;font-weight:800;letter-spacing:.02em;color:var(--white)}
+.stage-tip .tt-d{display:block;font-size:.68rem;font-weight:600;color:var(--steel-soft)}
+.stage-hint{
+  text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--steel-soft);
+}
+.legend i{width:9px;height:9px;border-radius:50%;background:var(--lc,#fff)}
+.stage-fallback{display:none;height:100%;align-items:center;justify-content:center}
+.stage-fallback svg{height:96%;width:auto}
+.stage.no3d{cursor:default}
+.stage.no3d .stage-fallback{display:flex}
+
+.hero-facts{
+  margin-top:40px;border-top:1px solid rgba(147,157,174,.28);
+  padding:22px 0 36px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;
+  font-size:.92rem;color:var(--steel-soft);font-weight:500;
+}
+.hero-facts b{color:var(--white);font-weight:800}
+.hf-sep{width:4px;height:4px;border-radius:50%;background:var(--steel);opacity:.7;flex:none}
+@media(max-width:640px){
+  .hero-facts{padding:18px 0 30px;font-size:.88rem;gap:8px 14px}
+  .hf-sep-b{display:none}
+}
+
+/* ---------- instituto ---------- */
+.inst-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:start}
+@media(max-width:900px){.inst-grid{grid-template-columns:1fr;gap:36px}}
+.inst-copy{display:flex;flex-direction:column;gap:18px;color:var(--ink-2);font-size:1.02rem;max-width:62ch}
+@media(max-width:900px){.inst-copy{max-width:none}.inst-copy p{max-width:62ch}}
+.inst-copy strong{color:var(--navy);font-weight:700}
+.mission{
+  margin-top:10px;padding:22px 26px;
+  border-left:3px solid var(--gold);background:var(--mist);border-radius:0 8px 8px 0;
+}
+.mission p{font-size:1.04rem;font-weight:500;color:var(--navy);line-height:1.55}
+.mission span{display:block;margin-top:10px;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-ink)}
+.esp .sec-head p a{color:inherit}
+.struct{
+  background:var(--navy);color:var(--white);border-radius:8px;
+  padding:32px 34px;box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.struct h3{color:var(--white);font-size:1.06rem;font-weight:800;letter-spacing:.02em;margin-bottom:18px}
+.struct ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;position:relative}
+.struct li{
+  display:flex;gap:14px;align-items:baseline;
+  padding:13px 0;border-top:1px solid rgba(147,157,174,.28);
+  font-size:.95rem;color:var(--steel-soft);font-weight:500;
+}
+.struct li b{color:var(--white);font-weight:700}
+.struct li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--steel);transform:translateY(-1px)}
+.struct-mark{position:absolute;right:-70px;bottom:-90px;width:260px;opacity:.5;pointer-events:none}
+.inst-photo{margin:44px 0 0;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.inst-photo img{display:block;width:100%;height:clamp(220px,30vw,360px);object-fit:cover;object-position:50% 46%}
+.inst-photo figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:48px 26px 16px;
+  font-size:.85rem;font-weight:600;color:var(--white);
+  background:linear-gradient(0deg, rgba(10,23,48,.8) 0%, rgba(10,23,48,0) 100%);
+}
+
+/* ---------- especialidades ---------- */
+.esp{background:var(--mist)}
+.esp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:1000px){.esp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.esp-grid{grid-template-columns:1fr}}
+.esp-card{
+  --ac:var(--steel-ink);
+  background:var(--white);border:1px solid var(--line);border-radius:8px;
+  padding:26px 28px;display:flex;flex-direction:column;gap:10px;
+  border-top:3px solid var(--ac);position:relative;scroll-margin-top:calc(var(--navh, 80px) + 20px);
+  transition:box-shadow .2s ease,transform .2s ease;
+}
+.esp-card:hover,.esp-card.flash{box-shadow:var(--shadow);transform:translateY(-3px)}
+@keyframes cardFlash{0%,100%{outline-color:transparent}12%,75%{outline-color:var(--ac)}}
+.esp-card.flash{outline:2.5px solid transparent;outline-offset:3px;animation:cardFlash 2.6s ease}
+.esp-card :is(h3,h4){font-size:1.06rem;font-weight:800;display:flex;align-items:center;gap:10px}
+.esp-cta{
+  margin-top:auto;padding-top:6px;align-self:flex-start;
+  font-size:.82rem;font-weight:700;color:var(--ac);text-decoration:none;
+}
+.esp-cta:hover{text-decoration:underline}
+.esp-card :is(h3,h4)::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--ac);flex:none}
+.esp-doc{font-size:.8rem;font-weight:700;letter-spacing:.05em;color:var(--steel-ink);text-transform:uppercase}
+.esp-card p{font-size:.92rem;color:var(--ink-2)}
+.ec-ombro{--ac:var(--c-ombro)}
+.ec-mao{--ac:var(--c-mao)}
+.ec-coluna{--ac:var(--c-coluna)}
+.ec-quadril{--ac:var(--c-quadril)}
+.ec-joelho{--ac:var(--c-joelho)}
+.ec-pe{--ac:var(--c-pe)}
+.ec-trauma{--ac:var(--steel-ink)}
+.ec-onco{--ac:var(--steel-ink)}
+.ec-esporte{--ac:var(--gold)}
+.ec-esporte .esp-cta{color:var(--gold-ink)}
+.ec-ped{--ac:var(--steel-ink)}
+
+.esp-more{margin-top:44px}
+.sec-bridge{margin-top:36px;display:flex}
+.esp-more-title{
+  font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-ink);
+  display:flex;align-items:center;gap:16px;margin-bottom:18px;
+}
+.esp-more-title::after{content:"";flex:1;height:1px;background:var(--line)}
+.esp-more .esp-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1000px){.esp-more .esp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.esp-more .esp-grid{grid-template-columns:1fr}}
+
+/* ---------- esporte ---------- */
+.sport{
+  background:
+    radial-gradient(900px 560px at 12% 0%, #1B3567 0%, rgba(27,53,103,0) 60%),
+    var(--navy-deep);
+  color:var(--white);position:relative;overflow:hidden;
+}
+.sport .eyebrow{color:var(--gold)}
+.sport h2{color:var(--white)}
+.sport .sec-head p{color:var(--steel-soft)}
+.sport-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.sport-grid{grid-template-columns:1fr}}
+.sport-card{
+  border:1px solid rgba(217,164,65,.28);border-top:3px solid var(--gold);
+  border-radius:8px;padding:26px 28px;
+  display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.03);
+  transition:background .2s ease,border-color .2s ease;
+}
+.sport-card:hover{background:rgba(255,255,255,.06);border-color:rgba(217,164,65,.5)}
+.sport-card h3{color:var(--white);font-size:1.06rem;font-weight:800}
+.sport-card p{font-size:.92rem;color:var(--steel-soft)}
+.sport-card .sc-tag{
+  font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);
+}
+.sport-mark{position:absolute;right:-140px;bottom:-180px;width:520px;opacity:.55;pointer-events:none}
+
+/* ---------- corpo clínico ---------- */
+.docs-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:1080px){.docs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.docs-grid{grid-template-columns:1fr}}
+.doc{
+  --ac:var(--steel-ink);
+  position:relative;
+  background:var(--white);border:1px solid var(--line);border-radius:8px;
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:box-shadow .25s ease,transform .25s ease;
+}
+.doc:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.docp{position:relative;padding-top:112%;background:radial-gradient(circle at 46% 30%, #1B3567 0%, var(--navy-deep) 85%);overflow:hidden}
+.docp img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;
+  filter:grayscale(1) contrast(1.03) brightness(1.02);
+  transition:filter .4s ease,transform .4s ease;
+}
+.docp::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(15,34,67,.24) 0%, rgba(15,34,67,.42) 100%);
+  mix-blend-mode:multiply;pointer-events:none;
+  transition:opacity .4s ease;
+}
+.doc:hover .docp img{filter:grayscale(0) contrast(1);transform:scale(1.03)}
+.doc:hover .docp::after{opacity:.35}
+@media (hover:none){
+  .docp img{filter:grayscale(0) contrast(1)}
+  .docp::after{opacity:.35}
+}
+@media(max-width:560px){.docp{padding-top:78%}}
+.docp .mono{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:var(--white);font-size:2.2rem;font-weight:800;letter-spacing:.05em;
+}
+.docp .mono::after{
+  content:"";position:absolute;width:150%;padding-top:150%;border-radius:50%;
+  border:1px solid rgba(255,255,255,.1);left:50%;top:56%;transform:translate(-50%,-50%);
+}
+.doc .chip{
+  position:absolute;top:12px;left:12px;z-index:2;
+  font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--navy);background:var(--gold-soft);
+  padding:4px 10px;border-radius:99px;white-space:nowrap;
+}
+.doc-body{flex:1;display:flex;flex-direction:column;gap:5px;padding:18px 20px 20px;border-top:3px solid var(--ac)}
+.doc h3{font-size:1.02rem;font-weight:800;line-height:1.2}
+.doc-reg{font-size:.74rem;font-weight:600;color:var(--steel-ink);letter-spacing:.05em;font-variant-numeric:tabular-nums}
+.doc-esp{font-size:.82rem;font-weight:700;color:var(--ac)}
+.doc-bio{font-size:.87rem;color:var(--ink-2);margin-top:4px}
+.doc-bio{margin-bottom:10px}
+.doc-cta{
+  margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;align-self:stretch;
+  font-size:.8rem;font-weight:700;color:var(--navy);text-decoration:none;white-space:nowrap;
+  border:1.5px solid var(--line);border-radius:6px;padding:10px 13px;min-height:42px;
+  transition:border-color .15s ease,background .15s ease;
+}
+.doc-cta:hover{border-color:var(--navy);background:var(--mist)}
+.doc-cta svg{flex:none}
+.docs-note{
+  margin-top:24px;font-size:.87rem;color:var(--ink-2);
+  display:flex;gap:10px;align-items:baseline;
+}
+.docs-note b{color:var(--navy)}
+
+/* ---------- convênios ---------- */
+.conv{background:var(--mist)}
+.conv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:860px){.conv-grid{grid-template-columns:1fr}}
+.conv-card{
+  background:var(--white);border:1px solid var(--line);border-top:3px solid var(--navy);
+  border-radius:8px;padding:24px 28px 26px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.conv-kicker{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-ink)}
+.conv-card h3{font-size:1.2rem;font-weight:800;color:var(--navy)}
+.conv-card p{font-size:.92rem;color:var(--ink-2)}
+.conv-list{
+  list-style:none;margin:10px 0 0;padding:16px 0 0;border-top:1px solid var(--line);
+  display:flex;flex-direction:column;gap:10px;
+}
+.conv-list li{display:flex;gap:11px;font-size:.88rem;color:var(--ink-2);align-items:baseline}
+.conv-list li::before{
+  content:"";flex:none;width:6px;height:6px;background:var(--gold);
+  transform:translateY(-2px) rotate(45deg);
+}
+.conv-note{
+  margin-top:24px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--steel);
+  border-radius:0 8px 8px 0;padding:18px 24px;font-size:.92rem;color:var(--ink-2);
+}
+.conv-note b{color:var(--navy)}
+
+.steps-title{margin-top:52px}
+.steps{margin-top:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;list-style:none;padding:0}
+.step{position:relative;display:flex;flex-direction:column;gap:8px}
+.step-n{
+  width:46px;height:46px;border-radius:50%;flex:none;position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--navy);color:var(--white);
+  font-size:1.15rem;font-weight:700;font-variant-numeric:tabular-nums;
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.14);
+  margin-bottom:12px;
+}
+.step::before{content:"";position:absolute;top:23px;left:60px;right:-24px;height:2px;background:var(--line)}
+.step:last-child::before{display:none}
+.step h3{font-size:1.02rem;font-weight:800}
+.step p{font-size:.92rem;color:var(--ink-2)}
+.step p a{font-weight:700}
+@media(max-width:860px){
+  .steps{grid-template-columns:1fr;gap:24px}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);column-gap:16px;row-gap:4px;align-items:center}
+  .step::before{display:none}
+  .step-n{margin:0;grid-row:1 / span 2;align-self:start}
+  .step h3{align-self:center}
+  .step p{grid-column:2}
+}
+
+/* ---------- contato ---------- */
+.cont-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:stretch}
+@media(max-width:860px){.cont-grid{grid-template-columns:1fr}}
+.cont-card{
+  border:1px solid var(--line);border-radius:8px;padding:32px 34px;
+  display:flex;flex-direction:column;gap:22px;background:var(--white);
+}
+.cont-item{display:flex;flex-direction:column;gap:3px}
+.cont-item .lab{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-ink)}
+.cont-item .val{font-size:1.05rem;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.cont-item .val a{text-decoration:none;display:inline-block;padding:7px 0}
+.cont-item .val a:hover{text-decoration:underline}
+.cont-item .sub{font-size:.85rem;color:var(--ink-2)}
+.cont-side{display:flex;flex-direction:column;gap:16px}
+.map-iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:1}
+.map-iframe.on{opacity:1;pointer-events:auto}
+.cont-map{
+  position:relative;display:block;flex:1;min-height:300px;
+  border-radius:8px;overflow:hidden;border:1px solid var(--line);
+}
+.cont-map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.cont-map:hover img{transform:scale(1.04)}
+.map-pill{
+  position:absolute;top:14px;left:14px;z-index:2;pointer-events:none;
+  background:var(--white);color:var(--navy);
+  font-size:.78rem;font-weight:700;padding:8px 14px;border-radius:99px;box-shadow:var(--shadow);
+}
+.map-btn{
+  position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:2;
+  background:var(--navy);color:var(--white);
+  font-size:.82rem;font-weight:700;padding:12px 18px;border-radius:6px;
+  white-space:nowrap;box-shadow:var(--shadow);transition:background .15s ease;
+}
+.cont-map:hover .map-btn{background:var(--navy-2)}
+.map-credit{
+  position:absolute;right:8px;bottom:8px;z-index:2;
+  font-size:.62rem;color:var(--ink-2);background:rgba(255,255,255,.78);
+  padding:2px 7px;border-radius:3px;
+}
+.map-credit a{color:inherit}
+@media(max-width:430px){.map-credit{bottom:auto;top:8px}}
+@media (prefers-reduced-motion: reduce){.cont-map img{transition:none}}
+
+/* ---------- whatsapp flutuante ---------- */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:70;
+  width:56px;height:56px;border-radius:50%;
+  background:#118445;color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px -8px rgba(15,34,67,.45);
+  transition:transform .15s ease,background .15s ease;
+}
+.wa-float:hover{transform:translateY(-2px);background:#0E6E39}
+.wa-float:focus-visible{outline-color:var(--navy)}
+@media(max-width:640px){
+  .wa-float{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:52px;height:52px}
+  footer{padding-bottom:84px}
+}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy);color:var(--steel-soft)}
+.foot-main{
+  display:grid;grid-template-columns:minmax(0,1.2fr) repeat(2,minmax(0,.9fr));gap:40px;
+  padding:56px 0 40px;
+}
+@media(max-width:860px){.foot-main{grid-template-columns:1fr;gap:32px}}
+.foot-logo img{height:72px;width:auto}
+.foot-about{margin-top:18px;font-size:.88rem;max-width:40ch;color:var(--steel)}
+.foot-col h3{
+  color:var(--white);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:16px;
+}
+.foot-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-col a{color:var(--steel-soft);text-decoration:none;font-size:.9rem;font-weight:500}
+.foot-col a:hover{color:var(--white);text-decoration:underline}
+.foot-col li{font-size:.9rem;font-weight:500}
+.foot-col li b{color:var(--white)}
+.foot-base{
+  border-top:1px solid rgba(147,157,174,.28);
+  /* padding-right reserva o canto do botao flutuante de WhatsApp */
+  padding:20px 88px 26px 0;display:flex;justify-content:space-between;gap:10px 28px;flex-wrap:wrap;
+  font-size:.78rem;color:var(--steel);letter-spacing:.03em;
+}
+.foot-base a{display:inline-block;padding:6px 2px;margin:-6px -2px;text-decoration:underline}
+.foot-col li a{color:inherit;text-decoration:none}
+.foot-col li a:hover{color:var(--white);text-decoration:underline}
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--navy);color:var(--white);font-weight:700;
+  padding:12px 20px;border-radius:0 0 8px 0;text-decoration:none;
+}
+.skip-link:focus{left:0}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<svg style="display:none" aria-hidden="true"><symbol id="ic-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol></svg>
+
+<!-- ================= TOPBAR ================= -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="addr">Rua Braz Sampieri, 30 · Jardim Tangará · Marília, SP</span>
+    <span><b><a href="tel:+551433672555" style="color:inherit;text-decoration:none">14 3367-2555</a></b> · <a href="tel:+551433672556" style="color:inherit;text-decoration:none">14 3367-2556</a></span>
+    <span>seg. a sex., das 8h às 19h</span>
+  </div>
+</div>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="nav" aria-label="Navegação principal">
+  <div class="wrap">
+    <a class="nav-logo" href="#topo" aria-label="IESPORT, Instituto de Especialidades Ortopédicas, voltar ao início">
+      <img src="{{LOGO}}" alt="IESPORT, Instituto de Especialidades Ortopédicas" width="240" height="114">
+    </a>
+    <div class="nav-links">
+      <div class="nav-sections">
+        <a href="#especialidades">Especialidades</a>
+        <a href="#corpo-clinico">Corpo clínico</a>
+        <a href="#instituto">O instituto</a>
+        <a href="#convenios">Convênios</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <a class="btn btn-navy" href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20IESPORT." target="_blank" rel="noopener noreferrer"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar pelo WhatsApp<span class="sr"> (abre em nova aba)</span></a>
+    </div>
+  </div>
+</nav>
+
+<main id="conteudo">
+<!-- ================= HERO ================= -->
+<header class="hero" id="topo">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow rv">Ortopedia e Traumatologia · Marília, SP</span>
+      <h1 class="rv">Cada região do corpo tem o <b>seu especialista</b></h1>
+      <p class="hero-sub rv">O IESPORT reúne oito ortopedistas com formação em centros de referência. Da coluna aos pés, sua consulta é com um médico que dedicou a carreira a essa região do corpo.</p>
+      <div class="hero-cta rv">
+        <a class="btn btn-white" href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20IESPORT." target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>
+          Agendar pelo WhatsApp<span class="sr"> (abre em nova aba)</span>
+        </a>
+        <a class="btn btn-ghost" href="tel:+551433672555">Ligar: 14 3367-2555</a>
+      </div>
+    </div>
+
+    <p class="hero-facts rv">
+      <span><b>Desde 2011</b> em Marília</span>
+      <span class="hf-sep" aria-hidden="true"></span>
+      <span><b>8 ortopedistas</b> no corpo clínico</span>
+      <span class="hf-sep hf-sep-b" aria-hidden="true"></span>
+      <span><b>10 subespecialidades</b></span>
+    </p>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 220 470" role="group" aria-label="Regiões do corpo atendidas no IESPORT">
+      <g aria-hidden="true">
+        <circle class="ring" cx="110" cy="232" r="148"/>
+        <circle class="ring ring-b" cx="110" cy="232" r="200"/>
+        <circle class="ring" cx="110" cy="232" r="258"/>
+      </g>
+      <g class="fig" aria-hidden="true">
+        <circle cx="110" cy="38" r="25"/>
+        <rect x="100" y="60" width="20" height="16" rx="7"/>
+        <rect x="66" y="72" width="88" height="122" rx="30"/>
+        <rect x="36" y="80" width="22" height="142" rx="11" transform="rotate(7 47 80)"/>
+        <rect x="162" y="80" width="22" height="142" rx="11" transform="rotate(-7 173 80)"/>
+        <rect x="70" y="180" width="80" height="48" rx="20"/>
+        <rect x="72" y="222" width="32" height="182" rx="16"/>
+        <rect x="116" y="222" width="32" height="182" rx="16"/>
+        <ellipse cx="86" cy="412" rx="24" ry="10"/>
+        <ellipse cx="134" cy="412" rx="24" ry="10"/>
+      </g>
+      <a class="hero-dot" href="#esp-ombro" style="--dc:#4FA3F0" aria-label="Ombro e cotovelo"><circle class="halo" cx="63" cy="86" r="13"/><circle class="core" cx="63" cy="86" r="6"/></a>
+      <a class="hero-dot" href="#esp-coluna" style="--dc:#9C7FF0;--dd:.5s" aria-label="Coluna vertebral"><circle class="halo" cx="110" cy="135" r="13"/><circle class="core" cx="110" cy="135" r="6"/></a>
+      <a class="hero-dot" href="#esp-mao" style="--dc:#2BC4B2;--dd:1s" aria-label="Mão e punho"><circle class="halo" cx="193" cy="216" r="13"/><circle class="core" cx="193" cy="216" r="6"/></a>
+      <a class="hero-dot" href="#esp-quadril" style="--dc:#7E9AE6;--dd:1.5s" aria-label="Quadril"><circle class="halo" cx="78" cy="200" r="13"/><circle class="core" cx="78" cy="200" r="6"/></a>
+      <a class="hero-dot" href="#esp-joelho" style="--dc:#C98FD1;--dd:2s" aria-label="Joelho"><circle class="halo" cx="88" cy="312" r="13"/><circle class="core" cx="88" cy="312" r="6"/></a>
+      <a class="hero-dot" href="#esp-pe" style="--dc:#4FC3E8;--dd:2.5s" aria-label="Pé e tornozelo"><circle class="halo" cx="86" cy="398" r="13"/><circle class="core" cx="86" cy="398" r="6"/></a>
+    </svg>
+  </div>
+</header>
+
+
+
+<!-- ================= ESPECIALIDADES ================= -->
+<section class="sec esp" id="especialidades">
+  <div class="wrap">
+    <div class="esp-layout">
+      <div class="esp-head sec-head rv">
+        <span class="eyebrow">Especialidades</span>
+        <h2>Aponte onde dói. Nós temos o especialista.</h2>
+        <p>Em vez de um ortopedista geral para tudo, o IESPORT organiza o atendimento por região do corpo. Use o mapa interativo ou vá direto ao cartão da sua região.</p>
+      </div>
+
+      <div class="esp-stage-panel rv">
+        <div class="stage" id="stage" aria-hidden="true">
+          <canvas id="body3d"></canvas>
+          <div class="stage-tip" id="stageTip"><span class="tt-r" id="tipR"></span><span class="tt-d" id="tipD"></span></div>
+          <div class="stage-fallback">
+            <svg viewBox="0 0 220 470" aria-hidden="true">
+              <g fill="rgba(227,232,240,.16)">
+                <circle cx="110" cy="38" r="25"/>
+                <rect x="100" y="60" width="20" height="16" rx="7"/>
+                <rect x="66" y="72" width="88" height="122" rx="30"/>
+                <rect x="36" y="80" width="22" height="142" rx="11" transform="rotate(7 47 80)"/>
+                <rect x="162" y="80" width="22" height="142" rx="11" transform="rotate(-7 173 80)"/>
+                <rect x="70" y="180" width="80" height="48" rx="20"/>
+                <rect x="72" y="222" width="32" height="182" rx="16"/>
+                <rect x="116" y="222" width="32" height="182" rx="16"/>
+                <ellipse cx="86" cy="412" rx="24" ry="10"/>
+                <ellipse cx="134" cy="412" rx="24" ry="10"/>
+              </g>
+              <circle cx="63" cy="86" r="7" fill="#4FA3F0"/>
+              <circle cx="193" cy="216" r="7" fill="#2BC4B2"/>
+              <circle cx="110" cy="135" r="7" fill="#9C7FF0"/>
+              <circle cx="78" cy="200" r="7" fill="#7E9AE6"/>
+              <circle cx="88" cy="312" r="7" fill="#C98FD1"/>
+              <circle cx="86" cy="398" r="7" fill="#4FC3E8"/>
+            </svg>
+          </div>
+        </div>
+        <p class="stage-hint" id="stageHint" aria-hidden="true">Arraste para girar · toque em um ponto</p>
+      </div>
+
+      <div class="esp-cards-col">
+    <div class="esp-grid">
+      <div class="esp-card ec-ombro rv" id="esp-ombro">
+        <h3>Ombro e cotovelo</h3>
+        <span class="esp-doc">Dr. Marcos Muriano da Silva</span>        <p>Síndrome do impacto, luxações, artrose e lesões do manguito rotador, com tratamento por artroscopia quando indicado.</p>
+        <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20ombro%20e%20cotovelo." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+      </div>
+      <div class="esp-card ec-mao rv" id="esp-mao">
+        <h3>Mão e punho</h3>
+        <span class="esp-doc">Dr. Eduardo Martinelli Jacob</span>        <p>Diagnóstico, cirurgia e reabilitação de fraturas, tendinites, síndrome do túnel do carpo e lesões da mão.</p>
+        <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20m%C3%A3o%20e%20punho." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+      </div>
+      <div class="esp-card ec-coluna rv" id="esp-coluna">
+        <h3>Coluna vertebral</h3>
+        <span class="esp-doc">Dr. Anderson Fukoshima</span>        <p>Hérnia de disco, escoliose e estenose, com cirurgia endoscópica e técnicas minimamente invasivas.</p>
+        <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20coluna." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+      </div>
+      <div class="esp-card ec-quadril rv" id="esp-quadril">
+        <h3>Quadril</h3>
+        <span class="esp-doc">Dr. Rodrigo Antoniassi</span>        <p>Artroscopia, próteses de quadril e infiltrações guiadas por imagem, da avaliação da dor à reabilitação.</p>
+        <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20quadril." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+      </div>
+      <div class="esp-card ec-joelho rv" id="esp-joelho">
+        <h3>Joelho</h3>
+        <span class="esp-doc">Dr. Ricardo Yanasse · Dr. Marcos Laraya</span>        <p>Lesões de menisco, ligamentos e cartilagem, do tratamento conservador à cirurgia e ao retorno ao esporte.</p>
+        <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20joelho." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+      </div>
+      <div class="esp-card ec-pe rv" id="esp-pe">
+        <h3>Pé e tornozelo</h3>
+        <span class="esp-doc">Dr. James Ferro</span>        <p>Cuidado do pé de adultos e crianças: deformidades, entorses, fraturas e dores crônicas ao caminhar.</p>
+        <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20p%C3%A9%20e%20tornozelo." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="esp-more rv">
+      <h3 class="esp-more-title">O cuidado vai além das articulações</h3>
+      <div class="esp-grid">
+        <div class="esp-card ec-trauma">
+          <h4>Trauma ortopédico</h4>
+          <span class="esp-doc">Dr. Ricardo Toma</span>          <p>Fraturas, contusões, entorses e luxações dos membros superiores e inferiores.</p>
+          <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20trauma%20ortop%C3%A9dico." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+        <div class="esp-card ec-onco">
+          <h4>Oncologia ortopédica</h4>
+          <span class="esp-doc">Dr. Ricardo Toma</span>          <p>Investigação e tratamento de tumores ósseos e de partes moles.</p>
+          <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20oncologia%20ortop%C3%A9dica." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+        <div class="esp-card ec-esporte">
+          <h4>Medicina do esporte</h4>
+          <span class="esp-doc">Dr. Laraya · Dr. Yanasse · Dr. Muriano</span>          <p>Prevenção, biomecânica e tratamento de lesões de quem treina e compete.</p>
+          <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20medicina%20do%20esporte." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+        <div class="esp-card ec-ped">
+          <h4>Ortopedia pediátrica</h4>
+          <span class="esp-doc">Dr. James Ferro</span>          <p>Acompanhamento do crescimento e das afecções ortopédicas da infância.</p>
+          <a class="esp-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20ortopedia%20pedi%C3%A1trica." target="_blank" rel="noopener noreferrer">Agendar esta especialidade<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESPORTE ================= -->
+<section class="sec sport" id="esporte">
+  <svg class="sport-mark" viewBox="0 0 220 260" aria-hidden="true">
+    <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
+    <circle cx="110" cy="78" r="32" fill="rgba(255,255,255,.06)"/>
+    <path d="M50,148 v-24 a5,5 0 0 1 5,-5 h8 a5,5 0 0 1 5,5 v9 h84 v-9 a5,5 0 0 1 5,-5 h8 a5,5 0 0 1 5,5 v24 a5,5 0 0 1 -5,5 h-27 v92 a5,5 0 0 1 -5,5 h-26 a5,5 0 0 1 -5,-5 v-92 h-47 a5,5 0 0 1 -5,-5 z" fill="rgba(255,255,255,.06)"/>
+  </svg>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Medicina do esporte</span>
+      <h2>Experiência que vem do esporte de alto rendimento</h2>
+      <p>Há mais de uma década nossos médicos acompanham equipes de alto rendimento, das seleções brasileiras de vôlei ao futebol profissional de Marília, e levam essa experiência de prevenção e recuperação para o consultório.</p>
+    </div>
+    <div class="sport-grid">
+      <div class="sport-card rv">
+        <span class="sc-tag">Seleções Brasileiras de Vôlei</span>
+        <h3>Nas comissões médicas da CBV</h3>
+        <p>Dr. Ricardo Yanasse acompanha seleções brasileiras femininas de vôlei desde 2013, das categorias de base à seleção principal, no trabalho de prevenção e recuperação de lesões das atletas.</p>
+      </div>
+      <div class="sport-card rv">
+        <span class="sc-tag">Título mundial · 2015</span>
+        <h3>Campeãs mundiais de 2015</h3>
+        <p>Dr. Marcos Muriano foi o médico da seleção feminina sub-23 campeã mundial de vôlei na Turquia e recebeu homenagem da CBV no Maracanãzinho pela conquista.</p>
+      </div>
+      <div class="sport-card rv">
+        <span class="sc-tag">SBMEE</span>
+        <h3>Presidência da sociedade nacional</h3>
+        <p>Dr. Marcos Laraya presidiu a Sociedade Brasileira de Medicina do Exercício e do Esporte até 2021 e hoje integra o Conselho Fiscal da entidade.</p>
+      </div>
+    </div>
+    <div class="sec-bridge rv">
+      <a class="btn btn-ghost" href="#corpo-clinico">Conheça o corpo clínico completo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CORPO CLÍNICO ================= -->
+<section class="sec" id="corpo-clinico">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Corpo clínico</span>
+      <h2>Conheça quem vai cuidar de você</h2>
+      <p>Formação pela FAMEMA, USP, Unifesp e Santa Casa, títulos de especialista e atuação constante em ensino e pesquisa. Aqui você sabe quem é o seu médico antes mesmo da primeira consulta.</p>
+    </div>
+
+    <div class="docs-grid">
+      <article class="doc rv" style="--ac:var(--c-joelho)">
+        <div class="docp"><span class="mono" aria-hidden="true">ML</span>{{IMG_laraya|Retrato do Dr. Marcos Henrique Ferreira Laraya}}</div>
+        <span class="chip">Sócio fundador</span>
+        <div class="doc-body">
+          <h3>Dr. Marcos Laraya</h3>
+          <span class="doc-reg">CRM 86090-SP · RQE 75455 · 75456</span>
+          <span class="doc-esp">Medicina do esporte · Joelho</span>
+          <p class="doc-bio">Presidiu a Sociedade Brasileira de Medicina do Exercício e do Esporte até 2021 e hoje integra o Conselho Fiscal da entidade. Dedica-se às lesões do esporte e do joelho.</p>
+          <a class="doc-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Marcos%20Laraya." target="_blank" rel="noopener noreferrer"><svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar com o Dr. Laraya<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+      </article>
+
+      <article class="doc rv" style="--ac:var(--c-joelho)">
+        <div class="docp"><span class="mono" aria-hidden="true">RY</span>{{IMG_yanasse|Retrato do Dr. Ricardo Hideki Yanasse}}</div>
+        <span class="chip">Sócio fundador</span>
+        <div class="doc-body">
+          <h3>Dr. Ricardo Yanasse</h3>
+          <span class="doc-reg">CRM 116908-SP · RQE 52167</span>
+          <span class="doc-esp">Cirurgia do joelho · Medicina do esporte</span>
+          <p class="doc-bio">Chefe do Grupo de Joelho da Santa Casa de Marília e médico de seleções brasileiras de vôlei. Mestre pela FAMEMA, com pesquisa sobre células-tronco aplicadas à cartilagem articular.</p>
+          <a class="doc-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ricardo%20Yanasse." target="_blank" rel="noopener noreferrer"><svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar com o Dr. Yanasse<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+      </article>
+
+      <article class="doc rv" style="--ac:var(--c-ombro)">
+        <div class="docp"><span class="mono" aria-hidden="true">MM</span>{{IMG_muriano|Retrato do Dr. Marcos Vinicius Muriano da Silva}}</div>
+        <span class="chip">Sócio fundador</span>
+        <div class="doc-body">
+          <h3>Dr. Marcos Muriano da Silva</h3>
+          <span class="doc-reg">CRM 116581-SP</span>
+          <span class="doc-esp">Ombro e cotovelo · Medicina do esporte</span>
+          <p class="doc-bio">Doutor pela Unesp e professor da FAMEMA, com fellowship em artroscopia na Itália. Foi médico da seleção feminina sub-23 de vôlei campeã mundial em 2015 e do futebol do Marília Atlético Clube.</p>
+          <a class="doc-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Marcos%20Muriano." target="_blank" rel="noopener noreferrer"><svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar com o Dr. Muriano<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+      </article>
+
+      <article class="doc rv" style="--ac:var(--steel-ink)">
+        <div class="docp"><span class="mono" aria-hidden="true">RT</span>{{IMG_toma|Retrato do Dr. Ricardo Toma}}</div>
+        <div class="doc-body">
+          <h3>Dr. Ricardo Toma</h3>
+          <span class="doc-reg">CRM 116721-SP · RQE 11714</span>
+          <span class="doc-esp">Trauma ortopédico · Oncologia ortopédica</span>
+          <p class="doc-bio">Especializações em oncologia ortopédica pela FMUSP e em trauma pela Santa Casa de São Paulo. Professor da FAMEMA desde 2011, cuida de fraturas complexas e tumores musculoesqueléticos.</p>
+          <a class="doc-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ricardo%20Toma." target="_blank" rel="noopener noreferrer"><svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar com o Dr. Toma<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+      </article>
+
+      <article class="doc rv" style="--ac:var(--c-coluna)">
+        <div class="docp"><span class="mono" aria-hidden="true">AF</span>{{IMG_fukoshima|Retrato do Dr. Anderson Ballestero Fukoshima}}</div>
+        <div class="doc-body">
+          <h3>Dr. Anderson Fukoshima</h3>
+          <span class="doc-reg">CRM 135274-SP · RQE 72308</span>
+          <span class="doc-esp">Cirurgia da coluna vertebral</span>
+          <p class="doc-bio">Formado pela FAMEMA, onde também concluiu a residência, com especialização em coluna pela Santa Casa de Santos. Membro da AO Spine, atua com cirurgia endoscópica e minimamente invasiva.</p>
+          <a class="doc-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Anderson%20Fukoshima." target="_blank" rel="noopener noreferrer"><svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar com o Dr. Fukoshima<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+      </article>
+
+      <article class="doc rv" style="--ac:var(--c-mao)">
+        <div class="docp"><span class="mono" aria-hidden="true">EJ</span>{{IMG_jacob|Retrato do Dr. Eduardo Martinelli Jacob}}</div>
+        <div class="doc-body">
+          <h3>Dr. Eduardo Jacob</h3>
+          <span class="doc-reg">CRM 125521-SP · RQE 43899 · 43900</span>
+          <span class="doc-esp">Cirurgia da mão</span>
+          <p class="doc-bio">Residência de cirurgia da mão pela Unifesp, com títulos da SBOT e da Sociedade Brasileira de Cirurgia da Mão. Formado pela FAMEMA, onde também atua no ensino da ortopedia.</p>
+          <a class="doc-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Eduardo%20Jacob." target="_blank" rel="noopener noreferrer"><svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar com o Dr. Jacob<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+      </article>
+
+      <article class="doc rv" style="--ac:var(--c-quadril)">
+        <div class="docp"><span class="mono" aria-hidden="true">RA</span>{{IMG_antoniassi|Retrato do Dr. Rodrigo da Silveira Antoniassi}}</div>
+        <div class="doc-body">
+          <h3>Dr. Rodrigo Antoniassi</h3>
+          <span class="doc-reg">CRM 156365-SP</span>
+          <span class="doc-esp">Cirurgia do quadril</span>
+          <p class="doc-bio">Residência pelo Hospital das Clínicas de Marília e especialização em cirurgia do quadril. Preceptor das residências de ortopedia da FAMEMA, da Santa Casa e da Unimar.</p>
+          <a class="doc-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Rodrigo%20Antoniassi." target="_blank" rel="noopener noreferrer"><svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar com o Dr. Antoniassi<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+      </article>
+
+      <article class="doc rv" style="--ac:var(--c-pe)">
+        <div class="docp"><span class="mono" aria-hidden="true">JF</span>{{IMG_ferro|Retrato do Dr. James Augusto Soares Ferro}}</div>
+        <div class="doc-body">
+          <h3>Dr. James Ferro</h3>
+          <span class="doc-reg">CRM 135460-SP</span>
+          <span class="doc-esp">Pé e tornozelo · Ortopedia pediátrica</span>
+          <p class="doc-bio">Especializações em ortopedia pediátrica e afecções do pé pela Santa Casa de Ribeirão Preto. Ortopedista pediátrico do Hospital das Clínicas da FAMEMA, com publicações na Acta Ortopédica Brasileira e na Revista Brasileira de Ortopedia.</p>
+          <a class="doc-cta" href="https://wa.me/5514997122181?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20James%20Ferro." target="_blank" rel="noopener noreferrer"><svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar com o Dr. Ferro<span class="sr"> (abre em nova aba)</span></a>
+        </div>
+      </article>
+    </div>
+
+    <p class="docs-note rv"><b>Transparência:</b> o CRM e o RQE de qualquer médico podem ser conferidos gratuitamente no portal do Cremesp, o Conselho Regional de Medicina do Estado de São Paulo.</p>
+  </div>
+</section>
+
+<!-- ================= INSTITUTO ================= -->
+<section class="sec" id="instituto">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">O instituto</span>
+      <h2>Um centro de especialidades com raiz acadêmica</h2>
+    </div>
+    <div class="inst-grid">
+      <div class="inst-copy rv">
+        <p>O Instituto de Especialidades Ortopédicas nasceu em 2011 da união de ortopedistas ligados às atividades de <strong>ensino, pesquisa e assistência da Faculdade de Medicina de Marília</strong>. A ideia era simples: reunir em um só endereço subespecialistas dedicados ao diagnóstico e ao tratamento das afecções do aparelho locomotor.</p>
+        <p>De lá para cá o corpo clínico cresceu e hoje cobre <strong>dez subespecialidades</strong>, do trauma à oncologia ortopédica. O que não mudou foi a forma de atender: um cuidado <strong>humanizado, ético e comprometido</strong> com a recuperação de cada paciente, sustentado por médicos que também formam as próximas gerações de ortopedistas da região.</p>
+        <div class="mission">
+          <p>Realizar um atendimento ortopédico integrado, humanizado, ético e comprometido com a satisfação de nossos pacientes.</p>
+          <span>Nossa missão</span>
+        </div>
+      </div>
+      <aside class="struct rv" aria-label="Estrutura da clínica">
+        <svg class="struct-mark" viewBox="0 0 220 260" aria-hidden="true">
+          <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,.05)"/>
+          <circle cx="110" cy="78" r="32" fill="rgba(255,255,255,.07)"/>
+          <path d="M50,148 v-24 a5,5 0 0 1 5,-5 h8 a5,5 0 0 1 5,5 v9 h84 v-9 a5,5 0 0 1 5,-5 h8 a5,5 0 0 1 5,5 v24 a5,5 0 0 1 -5,5 h-27 v92 a5,5 0 0 1 -5,5 h-26 a5,5 0 0 1 -5,-5 v-92 h-47 a5,5 0 0 1 -5,-5 z" fill="rgba(255,255,255,.07)"/>
+        </svg>
+        <h3>O que você encontra aqui</h3>
+        <ul>
+          <li><span><b>4 consultórios</b> equipados para consulta e avaliação</span></li>
+          <li><span><b>2 salas de curativos</b> para o acompanhamento do tratamento</span></li>
+          <li><span><b>Entrada acessível</b> para cadeira de rodas</span></li>
+          <li><span><b>Ambiente climatizado</b> e recepção própria</span></li>
+          <li><span><b>Equipe de enfermagem</b> no apoio ao atendimento</span></li>
+          <li><span><b>Confirmação e lembrete</b> de consulta por mensagem</span></li>
+        </ul>
+      </aside>
+    </div>
+    <figure class="inst-photo rv">
+      <img src="{{FACHADA_IMG}}" alt="Letreiro da fachada do IESPORT, Instituto de Especialidades Ortopédicas" width="1600" height="900">
+      <figcaption>Nossa sede na Rua Braz Sampieri, 30 · Jardim Tangará · Marília, SP</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= CONVÊNIOS ================= -->
+<section class="sec conv" id="convenios">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Convênios e atendimento</span>
+      <h2>Formas de atendimento</h2>
+    </div>
+    <div class="conv-grid">
+      <div class="conv-card rv">
+        <span class="conv-kicker">Plano de saúde</span>
+        <h3>Unimed</h3>
+        <p>Atendimento aos beneficiários da Unimed.</p>
+        <ul class="conv-list">
+          <li>Traga a carteirinha e um documento com foto</li>
+          <li>Ao agendar, confirme a cobertura com o especialista escolhido</li>
+        </ul>
+      </div>
+      <div class="conv-card rv">
+        <span class="conv-kicker">Sem convênio</span>
+        <h3>Particular</h3>
+        <p>Consultas e procedimentos com qualquer um dos oito especialistas.</p>
+        <ul class="conv-list">
+          <li>Agendamento direto na recepção, sem guias nem autorização</li>
+          <li>Recibo fornecido para quem vai pedir reembolso</li>
+        </ul>
+      </div>
+      <div class="conv-card rv">
+        <span class="conv-kicker">Outros planos</span>
+        <h3>Reembolso</h3>
+        <p>Dependendo do plano, parte do valor da consulta particular pode ser reembolsada.</p>
+        <ul class="conv-list">
+          <li>Você paga como particular e aciona o seu plano</li>
+          <li>A clínica fornece o recibo; regras e valores variam por convênio</li>
+        </ul>
+      </div>
+    </div>
+    <div class="conv-note rv">
+      <b>Tem outro convênio?</b> Alguns dos nossos médicos atendem também planos como Amil, Bradesco Saúde, SulAmérica e São Lucas. Ao agendar, informe o seu plano para confirmarmos a cobertura com o especialista escolhido.<br>
+      <a href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20saber%20se%20voc%C3%AAs%20atendem%20o%20meu%20conv%C3%AAnio." target="_blank" rel="noopener noreferrer" style="font-weight:700">Confirmar meu convênio pelo WhatsApp<span class="sr"> (abre em nova aba)</span></a>
+    </div>
+
+    <h3 class="esp-more-title steps-title" id="como-agendar">Como agendar em 3 passos</h3>
+    <ol class="steps">
+      <li class="step rv">
+        <span class="step-n" aria-hidden="true">1</span>
+        <h3>Chame no WhatsApp</h3>
+        <p>Mande mensagem para o <a href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20IESPORT." target="_blank" rel="noopener noreferrer">14 99712-2181</a> ou ligue para 14 3367-2555, de segunda a sexta, das 8h às 19h.</p>
+      </li>
+      <li class="step rv">
+        <span class="step-n" aria-hidden="true">2</span>
+        <h3>Conte qual é a sua queixa</h3>
+        <p>Nossa equipe direciona você ao subespecialista da área da sua queixa e confirma o convênio.</p>
+      </li>
+      <li class="step rv">
+        <span class="step-n" aria-hidden="true">3</span>
+        <h3>Receba a confirmação</h3>
+        <p>A consulta é confirmada por mensagem e, perto da data, você ainda recebe um lembrete.</p>
+      </li>
+    </ol>
+    <div class="sec-bridge rv">
+      <a class="btn btn-navy" href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20IESPORT." target="_blank" rel="noopener noreferrer"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Começar pelo WhatsApp<span class="sr"> (abre em nova aba)</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="sec" id="contato">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Contato</span>
+      <h2>Onde estamos</h2>
+    </div>
+    <div class="cont-grid">
+      <div class="cont-card rv">
+        <div class="cont-item">
+          <span class="lab">Endereço</span>
+          <span class="val"><a href="https://www.google.com/maps/search/?api=1&amp;query=Instituto+de+Especialidades+Ortop%C3%A9dicas+Rua+Braz+Sampieri+30+Mar%C3%ADlia+SP" target="_blank" rel="noopener noreferrer">Rua Braz Sampieri, 30<span class="sr"> (abre o mapa em nova aba)</span></a></span>
+          <span class="sub">Jardim Tangará · Marília, SP · CEP 17516-026</span>
+        </div>
+        <div class="cont-item">
+          <span class="lab">WhatsApp</span>
+          <span class="val"><a href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20IESPORT." target="_blank" rel="noopener noreferrer">14 99712-2181</a></span>
+          <span class="sub">Agende sua consulta por mensagem</span>
+        </div>
+        <div class="cont-item">
+          <span class="lab">Telefones</span>
+          <span class="val"><a href="tel:+551433672555">14 3367-2555</a> · <a href="tel:+551433672556">14 3367-2556</a></span>
+        </div>
+        <div class="cont-item">
+          <span class="lab">Horário de atendimento</span>
+          <span class="val">Segunda a sexta, das 8h às 19h</span>
+          <span class="sub">Entrada acessível para cadeira de rodas</span>
+        </div>
+        <div class="cont-item">
+          <span class="lab">E-mail</span>
+          <span class="val"><a href="mailto:iesport@outlook.com">iesport@outlook.com</a></span>
+        </div>
+      </div>
+      <div class="cont-side rv">
+        <div class="cont-map" id="mapSlot">
+          <img src="{{MAP}}" alt="Mapa da região da clínica: Rua Braz Sampieri, 30, Jardim Tangará, Marília">
+          <span class="map-pill">Rua Braz Sampieri, 30</span>
+          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Instituto+de+Especialidades+Ortop%C3%A9dicas+Rua+Braz+Sampieri+30+Mar%C3%ADlia+SP" target="_blank" rel="noopener noreferrer">Ver rotas no Google Maps<span class="sr"> (abre em nova aba)</span></a>
+          <span class="map-credit" id="mapCredit"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors<span class="sr"> (abre em nova aba)</span></a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- PENDÊNCIAS PARA PRODUÇÃO (conferir com a clínica antes de publicar):
+     1. CFM: o rodapé deve exibir o nome e CRM do diretor técnico médico da clínica.
+     2. CFM: obter e exibir o RQE dos Drs. Muriano, Antoniassi e Ferro (os demais já têm).
+     3. Confirmar: e-mail iesport@outlook.com, convênios aceitos além da Unimed e a
+        grafia do sobrenome "Fukoshima" nos registros do CRM. -->
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-main">
+      <div class="foot-logo">
+        <img src="{{LOGOFOOT}}" alt="IESPORT, Instituto de Especialidades Ortopédicas" width="339" height="151">
+        <p class="foot-about">Centro de subespecialidades ortopédicas em Marília. Desde 2011, um especialista dedicado para cada região do corpo.</p>
+      </div>
+      <div class="foot-col">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#corpo-clinico">Corpo clínico</a></li>
+          <li><a href="#instituto">O instituto</a></li>
+          <li><a href="#convenios">Convênios</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Atendimento</h3>
+        <ul>
+          <li>Rua Braz Sampieri, 30 · Jardim Tangará</li>
+          <li>Marília, SP · CEP 17516-026</li>
+          <li><b>WhatsApp</b> <a href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20IESPORT." target="_blank" rel="noopener noreferrer">14 99712-2181<span class="sr"> (abre em nova aba)</span></a></li>
+          <li><b><a href="tel:+551433672555">14 3367-2555</a></b> · <a href="tel:+551433672556">14 3367-2556</a></li>
+          <li>Segunda a sexta, das 8h às 19h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>IESPORT · Instituto de Especialidades Ortopédicas</span>
+      <span>LMY Serviços Médicos Especializados de Marília Sociedade Simples Ltda. · CNPJ 14.040.819/0001-97</span>
+    </div>
+    <!-- Atribuição: modelo 3D "Human Base Mesh" de Arthur Migranov, via Poly Pizza
+         (https://poly.pizza/m/eWGDnQ0jzmH), licença CC BY 3.0. -->
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20IESPORT." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a recepção no WhatsApp">
+  <svg width="26" height="26" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>
+</a>
+
+<script>{{THREEJS}}</script>
+<script>{{GLTFLOADER}}</script>
+<script>
+var GLB_B64 = '{{GLB}}';
+</script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  /* altura real da nav sticky vira folga das ancoras (a nav tem 2 linhas no mobile) */
+  var setNavH = function(){ document.documentElement.style.setProperty('--navh', nav.offsetHeight + 'px'); };
+  window.addEventListener('resize', setNavH, {passive:true});
+  setNavH();
+
+  /* reveal + count-up */
+  var revs = document.querySelectorAll('.rv');
+  function countUp(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if (!target || reduce) return;
+    var t0 = null;
+    function tick(t){
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / 900, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    el.textContent = '0';
+    requestAnimationFrame(tick);
+  }
+  if (reduce || !('IntersectionObserver' in window)) {
+    revs.forEach(function(el){ el.classList.add('on'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('on');
+          e.target.querySelectorAll('[data-count]').forEach(countUp);
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    revs.forEach(function(el){ io.observe(el); });
+  }
+
+  /* card flash helper */
+  var flashTimer = null;
+  function goCard(id, ev){
+    var c = document.getElementById(id);
+    if (!c) return;
+    if (ev) ev.preventDefault();
+    c.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
+    c.setAttribute('tabindex', '-1');
+    c.focus({preventScroll:true});
+    document.querySelectorAll('.esp-card.flash').forEach(function(x){ x.classList.remove('flash'); });
+    c.classList.add('flash');
+    clearTimeout(flashTimer);
+    flashTimer = setTimeout(function(){ c.classList.remove('flash'); }, 2600);
+  }
+  /* pontos do hero levam ao card da especialidade com o mesmo destaque do 3D */
+  document.querySelectorAll('.hero-dot').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      goCard(a.getAttribute('href').slice(1), ev);
+    });
+  });
+  /* Google Maps nativo com fallback para o mapa estatico (o preview bloqueia iframes externos) */
+  (function(){
+    var slot = document.getElementById('mapSlot');
+    if (!slot) return;
+    var blocked = false, settled = false;
+    function onViol(ev){
+      /* 'google.com' (nao 'google') para nao confundir com violacoes de fonts.googleapis.com */
+      if ((ev.blockedURI || '').indexOf('google.com') !== -1) { blocked = true; settle(); }
+    }
+    var frame = document.createElement('iframe');
+    frame.className = 'map-iframe';
+    frame.title = 'Mapa do Google Maps com a localização do IESPORT';
+    frame.loading = 'lazy';
+    frame.referrerPolicy = 'no-referrer';
+    function settle(){
+      if (settled) return;
+      settled = true;
+      document.removeEventListener('securitypolicyviolation', onViol);
+      if (blocked && frame.parentNode) frame.parentNode.removeChild(frame);
+    }
+    frame.addEventListener('load', function(){
+      setTimeout(function(){
+        if (!blocked) {
+          frame.classList.add('on');
+          var cr = document.getElementById('mapCredit');
+          if (cr) cr.textContent = 'Google Maps';
+          settle();
+        }
+      }, 80);
+    });
+    document.addEventListener('securitypolicyviolation', onViol);
+    frame.src = 'https://www.google.com/maps?q=IESPORT%20Instituto%20de%20Especialidades%20Ortop%C3%A9dicas%2C%20R.%20Braz%20Sampieri%2C%2030%20-%20Mar%C3%ADlia%2C%20SP&z=16&hl=pt-BR&output=embed';
+    slot.appendChild(frame);
+    setTimeout(settle, 4000);
+  })();
+
+  /* scrollspy: marca a secao atual na nav */
+  var secMap = {};
+  document.querySelectorAll('.nav-links a[href^="#"]:not(.btn)').forEach(function(a){
+    secMap[a.getAttribute('href').slice(1)] = a;
+  });
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var a = secMap[en.target.id];
+        if (!a) return;
+        Object.keys(secMap).forEach(function(k){ secMap[k].removeAttribute('aria-current'); });
+        a.setAttribute('aria-current', 'true');
+      });
+    }, {rootMargin:'-40% 0px -55% 0px'});
+    Object.keys(secMap).forEach(function(id){
+      var s = document.getElementById(id);
+      if (s) spy.observe(s);
+    });
+  }
+
+  /* ============ 3D body ============ */
+  var stage = document.getElementById('stage');
+  var canvas = document.getElementById('body3d');
+  var tip = document.getElementById('stageTip');
+  var tipR = document.getElementById('tipR');
+  var tipD = document.getElementById('tipD');
+  var hint = document.getElementById('stageHint');
+  if (hint && !window.matchMedia('(pointer:coarse)').matches) {
+    hint.textContent = 'Arraste para girar · clique em um ponto';
+  }
+
+  var REGIONS = [
+    {id:'esp-ombro',   name:'Ombro e cotovelo', doc:'Dr. Marcos Muriano da Silva', color:0x4FA3F0, pos:[0.62,2.58,0.20]},
+    {id:'esp-mao',     name:'Mão e punho',      doc:'Dr. Eduardo Jacob',           color:0x2BC4B2, pos:[0.88,1.22,0.16]},
+    {id:'esp-coluna',  name:'Coluna vertebral', doc:'Dr. Anderson Fukoshima',      color:0x9C7FF0, pos:[0,2.28,-0.44]},
+    {id:'esp-quadril', name:'Quadril',          doc:'Dr. Rodrigo Antoniassi',      color:0x7E9AE6, pos:[-0.40,1.52,0.22]},
+    {id:'esp-joelho',  name:'Joelho',           doc:'Dr. Yanasse · Dr. Laraya',    color:0xC98FD1, pos:[0.28,0.74,0.22]},
+    {id:'esp-pe',      name:'Pé e tornozelo',   doc:'Dr. James Ferro',             color:0x4FC3E8, pos:[-0.28,0.10,0.44]}
+  ];
+
+  function init3D(){
+    if (typeof THREE === 'undefined') return false;
+    var COARSE = window.matchMedia('(pointer:coarse)').matches;
+    var renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true, antialias:true});
+    } catch(e){ return false; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    canvas.addEventListener('webglcontextlost', function(ev){
+      ev.preventDefault();
+      stage.classList.add('no3d');
+      canvas.style.display = 'none';
+    }, false);
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(35, 1, 0.1, 50);
+    camera.position.set(0, 2.0, 6.1);
+    camera.lookAt(0, 1.76, 0);
+
+    scene.add(new THREE.AmbientLight(0x33466E, 0.9));
+    var key = new THREE.DirectionalLight(0xFFFFFF, 0.95);
+    key.position.set(2.4, 3.4, 4);
+    scene.add(key);
+    var rim = new THREE.DirectionalLight(0x9AB4E8, 0.85);
+    rim.position.set(-3, 2, -3.4);
+    scene.add(rim);
+    var fill = new THREE.PointLight(0x6C86B8, 0.5);
+    fill.position.set(-1.6, 0.7, 2.6);
+    scene.add(fill);
+
+    var group = new THREE.Group();
+    scene.add(group);
+
+    var skin = new THREE.MeshStandardMaterial({color:0xE9EEF6, roughness:0.38, metalness:0.08});
+    var bodyMeshes = [];
+    function add(geo, x, y, z, rz, sz){
+      var m = new THREE.Mesh(geo, skin);
+      m.position.set(x, y, z);
+      if (rz) m.rotation.z = rz;
+      if (sz) m.scale.z = sz;
+      group.add(m);
+      bodyMeshes.push(m);
+      return m;
+    }
+    /* fallback: mannequin from primitives (Y up, feet at 0) */
+    function buildPrimitiveBody(){
+      add(new THREE.SphereGeometry(0.33, 28, 22), 0, 3.16, 0);                       /* head */
+      add(new THREE.CylinderGeometry(0.13, 0.16, 0.28, 18), 0, 2.82, 0);             /* neck */
+      add(new THREE.CapsuleGeometry(0.50, 0.30, 8, 22), 0, 2.12, 0, 0, 0.72);        /* torso */
+      add(new THREE.CapsuleGeometry(0.40, 0.22, 8, 22), 0, 1.48, 0, 0, 0.78);        /* pelvis */
+      add(new THREE.SphereGeometry(0.185, 20, 16), 0.60, 2.56, 0);                   /* shoulders */
+      add(new THREE.SphereGeometry(0.185, 20, 16), -0.60, 2.56, 0);
+      add(new THREE.CapsuleGeometry(0.125, 0.52, 6, 16), 0.72, 2.14, 0, -0.10);      /* upper arms */
+      add(new THREE.CapsuleGeometry(0.125, 0.52, 6, 16), -0.72, 2.14, 0, 0.10);
+      add(new THREE.CapsuleGeometry(0.105, 0.48, 6, 16), 0.81, 1.56, 0, -0.05);      /* forearms */
+      add(new THREE.CapsuleGeometry(0.105, 0.48, 6, 16), -0.81, 1.56, 0, 0.05);
+      var hR = add(new THREE.SphereGeometry(0.135, 18, 14), 0.86, 1.20, 0);          /* hands */
+      hR.scale.set(1, 1.35, 0.62);
+      var hL = add(new THREE.SphereGeometry(0.135, 18, 14), -0.86, 1.20, 0);
+      hL.scale.set(1, 1.35, 0.62);
+      add(new THREE.CapsuleGeometry(0.185, 0.58, 8, 18), 0.27, 1.02, 0);             /* thighs */
+      add(new THREE.CapsuleGeometry(0.185, 0.58, 8, 18), -0.27, 1.02, 0);
+      add(new THREE.CapsuleGeometry(0.145, 0.56, 8, 18), 0.27, 0.42, 0);             /* shins */
+      add(new THREE.CapsuleGeometry(0.145, 0.56, 8, 18), -0.27, 0.42, 0);
+      var fR = add(new THREE.CapsuleGeometry(0.115, 0.26, 6, 14), 0.27, 0.09, 0.15); /* feet */
+      fR.rotation.x = Math.PI / 2;
+      var fL = add(new THREE.CapsuleGeometry(0.115, 0.26, 6, 14), -0.27, 0.09, 0.15);
+      fL.rotation.x = Math.PI / 2;
+    }
+
+    /* soft ground glow */
+    var gc = document.createElement('canvas'); gc.width = gc.height = 256;
+    var g = gc.getContext('2d');
+    var grad = g.createRadialGradient(128,128,10,128,128,120);
+    grad.addColorStop(0,'rgba(27,53,103,0.85)');
+    grad.addColorStop(1,'rgba(27,53,103,0)');
+    g.fillStyle = grad; g.fillRect(0,0,256,256);
+    var groundTex = new THREE.CanvasTexture(gc);
+    groundTex.encoding = THREE.sRGBEncoding;
+    var ground = new THREE.Mesh(
+      new THREE.PlaneGeometry(4.4, 4.4),
+      new THREE.MeshBasicMaterial({map:groundTex, transparent:true, depthWrite:false})
+    );
+    ground.rotation.x = -Math.PI/2;
+    ground.position.y = 0.005;
+    scene.add(ground);
+
+    /* glow sprite texture */
+    var sc2 = document.createElement('canvas'); sc2.width = sc2.height = 128;
+    var s2 = sc2.getContext('2d');
+    var sg = s2.createRadialGradient(64,64,4,64,64,60);
+    sg.addColorStop(0,'rgba(255,255,255,0.95)');
+    sg.addColorStop(0.35,'rgba(255,255,255,0.28)');
+    sg.addColorStop(1,'rgba(255,255,255,0)');
+    s2.fillStyle = sg; s2.fillRect(0,0,128,128);
+    var glowTex = new THREE.CanvasTexture(sc2);
+    glowTex.encoding = THREE.sRGBEncoding;
+
+    var markers = [];
+    function makeMarkers(){
+      REGIONS.forEach(function(r){
+        var mk = new THREE.Group();
+        mk.position.set(r.pos[0], r.pos[1], r.pos[2]);
+        var core = new THREE.Mesh(
+          new THREE.SphereGeometry(0.062, 18, 14),
+          new THREE.MeshBasicMaterial({color:r.color})
+        );
+        mk.add(core);
+        var glow = new THREE.Sprite(new THREE.SpriteMaterial({
+          map:glowTex, color:r.color, transparent:true,
+          blending:THREE.AdditiveBlending, depthWrite:false
+        }));
+        glow.scale.set(0.42, 0.42, 1);
+        mk.add(glow);
+        var pick = new THREE.Mesh(
+          new THREE.SphereGeometry(COARSE ? 0.26 : 0.17, 8, 6),
+          new THREE.MeshBasicMaterial({visible:false})
+        );
+        mk.add(pick);
+        mk.userData = r;
+        group.add(mk);
+        markers.push({root:mk, core:core, glow:glow, pick:pick, data:r, boost:0});
+      });
+    }
+
+    /* ancora os marcadores na superficie do corpo carregado, via raycast adaptativo */
+    function snapMarkers(H){
+      var caster = new THREE.Raycaster();
+      function probe(ox, oy, oz, dx, dy, dz){
+        caster.set(new THREE.Vector3(ox, oy, oz), new THREE.Vector3(dx, dy, dz).normalize());
+        var hits = caster.intersectObjects(bodyMeshes, true);
+        if (!hits.length) return null;
+        return hits[0].point.clone().addScaledVector(caster.ray.direction, -0.07);
+      }
+      function scan(fn, list){
+        for (var i = 0; i < list.length; i++){ var p = fn(list[i]); if (p) return p; }
+        return null;
+      }
+      /* ombro: raio de cima, sobre o ombro direito */
+      var ombro = scan(function(xx){ return probe(xx * H, H + 1, 0, 0, -1, 0); }, [0.115, 0.10, 0.13, 0.09, 0.15]);
+      /* mao: ponto mais externo do braco, em qualquer pose */
+      var mao = null;
+      for (var yy = 0.26; yy <= 0.86; yy += 0.04){
+        var pm = probe(H, yy * H, 0, -1, 0, 0);
+        if (pm && (!mao || pm.x > mao.x)) mao = pm;
+      }
+      var coluna = probe(0, 0.66 * H, -3, 0, 0, 1);
+      var quadril = probe(-0.075 * H, 0.53 * H, 3, 0, 0, -1);
+      var joelho = scan(function(xx){ return probe(xx * H, 0.28 * H, 3, 0, 0, -1); }, [0.055, 0.075, 0.04, 0.09]);
+      var pe = scan(function(xx){ return probe(-xx * H, 0.045 * H, 3, 0, 0, -1); }, [0.05, 0.07, 0.03, 0.09, 0.11]);
+      var byId = {
+        'esp-ombro': ombro, 'esp-mao': mao, 'esp-coluna': coluna,
+        'esp-quadril': quadril, 'esp-joelho': joelho, 'esp-pe': pe
+      };
+      REGIONS.forEach(function(r){
+        var p = byId[r.id];
+        if (p) r.pos = [p.x, p.y, p.z];
+      });
+    }
+
+    function useModel(gltf){
+      var model = gltf.scene;
+      model.traverse(function(o){
+        if (o.isMesh) { o.material = skin; bodyMeshes.push(o); }
+      });
+      if (!bodyMeshes.length) { usePrimitives(); return; }
+      var box = new THREE.Box3().setFromObject(model);
+      var size = new THREE.Vector3(); box.getSize(size);
+      var s = 3.5 / size.y;
+      model.scale.setScalar(s);
+      box.setFromObject(model);
+      var c = new THREE.Vector3(); box.getCenter(c);
+      model.position.x -= c.x;
+      model.position.z -= c.z;
+      model.position.y -= box.min.y;
+      group.add(model);
+      /* probes em espaco do modelo: zera a rotacao do grupo durante a ancoragem
+         (o loop reaplica curY/curX no proximo frame) */
+      group.rotation.set(0, 0, 0);
+      group.updateMatrixWorld(true);
+      snapMarkers(3.5);
+      makeMarkers();
+    }
+    function usePrimitives(){ buildPrimitiveBody(); makeMarkers(); }
+
+    if (typeof GLB_B64 === 'string' && GLB_B64.length > 100 && THREE.GLTFLoader) {
+      try {
+        var bin = atob(GLB_B64);
+        var buf = new Uint8Array(bin.length);
+        for (var bi = 0; bi < bin.length; bi++) buf[bi] = bin.charCodeAt(bi);
+        new THREE.GLTFLoader().parse(buf.buffer, '', useModel, function(){ usePrimitives(); });
+      } catch(e){ usePrimitives(); }
+    } else {
+      usePrimitives();
+    }
+
+    /* sizing */
+    function resize(){
+      var w = stage.clientWidth, h = stage.clientHeight;
+      if (!w || !h) return;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      /* em canvas estreito e alto, afasta a camera para os bracos nao cortarem;
+         1.5 = largura de cena que precisa caber (envergadura + folga de giro) */
+      var zNeed = 1.75 / (2 * Math.tan(camera.fov * Math.PI / 360) * camera.aspect);
+      camera.position.z = Math.max(6.1, zNeed);
+      var zf = camera.position.z / 6.1;
+      markers.forEach(function(m){ m.root.scale.setScalar(zf); });
+      camera.updateProjectionMatrix();
+    }
+    resize();
+    if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
+    else window.addEventListener('resize', resize);
+
+    /* interaction */
+    /* giro de entrada comunica que a cena e interativa; reduced motion pula direto */
+    var targetY = -0.45, curY = reduce ? -0.45 : -1.35, targetX = 0, curX = 0;
+    var dragging = false, lastX = 0, lastY = 0, idleT = 3.5, moved = false;
+    var downX = 0, downY = 0;
+    var ray = new THREE.Raycaster();
+    var ptr = new THREE.Vector2();
+    var hovered = null;
+
+    function pointerNDC(e){
+      var rect = canvas.getBoundingClientRect();
+      ptr.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      ptr.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    }
+    function pickMarker(e){
+      pointerNDC(e);
+      ray.setFromCamera(ptr, camera);
+      var hits = ray.intersectObjects(markers.map(function(m){ return m.pick; }).concat(bodyMeshes), false);
+      if (!hits.length) return null;
+      var obj = hits[0].object.parent;
+      for (var i = 0; i < markers.length; i++) if (markers[i].root === obj) return markers[i];
+      return null;
+    }
+    function setHover(mk, e){
+      if (hovered === mk) { if (mk && e) placeTip(mk); return; }
+      hovered = mk;
+      stage.style.cursor = mk ? 'pointer' : 'grab';
+      if (mk) {
+        tipR.textContent = mk.data.name;
+        tipD.textContent = mk.data.doc;
+        tip.classList.add('on');
+        if (e) placeTip(mk);
+      } else {
+        tip.classList.remove('on');
+      }
+    }
+    var tipV = new THREE.Vector3();
+    function placeTip(mk){
+      mk.root.getWorldPosition(tipV);
+      tipV.project(camera);
+      var rect = stage.getBoundingClientRect();
+      var x = (tipV.x + 1) / 2 * rect.width;
+      tip.style.left = Math.max(70, Math.min(rect.width - 70, x)) + 'px';
+      tip.style.top = Math.max(44, (-tipV.y + 1) / 2 * rect.height) + 'px';
+    }
+
+    function endDrag(){
+      dragging = false;
+      stage.classList.remove('grabbing');
+      idleT = 0;
+    }
+    canvas.addEventListener('pointerdown', function(e){
+      dragging = true; moved = false;
+      downX = e.clientX; downY = e.clientY;
+      lastX = e.clientX; lastY = e.clientY;
+      stage.classList.add('grabbing');
+      idleT = 0;
+      try { canvas.setPointerCapture(e.pointerId); } catch(err){}
+    });
+    canvas.addEventListener('pointercancel', function(){ endDrag(); moved = true; });
+    canvas.addEventListener('pointermove', function(e){
+      if (dragging) {
+        var dx = e.clientX - lastX, dy = e.clientY - lastY;
+        lastX = e.clientX; lastY = e.clientY;
+        if (Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY) > (e.pointerType === 'touch' ? 12 : 4)) moved = true;
+        targetY += dx * 0.0075;
+        targetX = Math.max(-0.22, Math.min(0.3, targetX + dy * 0.003));
+        idleT = 0;
+      } else if (e.pointerType !== 'touch') {
+        setHover(pickMarker(e), e);
+      }
+    });
+    canvas.addEventListener('pointerup', function(e){
+      endDrag();
+      if (!moved) {
+        var mk = pickMarker(e);
+        if (mk) {
+          if (e.pointerType === 'touch') {
+            /* mostra o tooltip por um instante antes de rolar, para o usuario saber aonde vai */
+            setHover(mk, e); placeTip(mk);
+            setTimeout(function(){ setHover(null); goCard(mk.data.id); }, 650);
+          } else {
+            goCard(mk.data.id);
+          }
+        }
+      }
+    });
+    canvas.addEventListener('pointerleave', function(){ setHover(null); });
+
+    /* card hover -> marker boost */
+    REGIONS.forEach(function(r){
+      var c = document.getElementById(r.id);
+      if (!c) return;
+      c.addEventListener('mouseenter', function(){
+        markers.forEach(function(m){ if (m.data.id === r.id) m.boost = 1; });
+      });
+      c.addEventListener('mouseleave', function(){
+        markers.forEach(function(m){ if (m.data.id === r.id) m.boost = 0; });
+      });
+    });
+
+    var visible = true, rafId = null;
+    function startLoop(){ if (rafId === null) rafId = requestAnimationFrame(loop); }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(en){
+        visible = en[en.length - 1].isIntersecting;
+        if (visible) startLoop();
+        else if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+      }, {threshold:0}).observe(stage);
+    }
+
+    var t = 0;
+    function loop(){
+      rafId = requestAnimationFrame(loop);
+      if (!visible || document.hidden) return;
+      t += 0.016;
+      idleT += 0.016;
+      if (!reduce && !dragging && !hovered && idleT > 3.5) targetY += 0.0035;
+      curY += (targetY - curY) * 0.08;
+      curX += (targetX - curX) * 0.08;
+      group.rotation.y = curY;
+      group.rotation.x = curX;
+      markers.forEach(function(m, i){
+        var pulse = reduce ? 0.46 : 0.42 + Math.sin(t * 2.1 + i * 1.1) * 0.06;
+        var extra = (hovered === m ? 0.3 : 0) + m.boost * 0.3;
+        m.glow.scale.set(pulse + extra, pulse + extra, 1);
+        var s = 1 + extra * 1.1;
+        m.core.scale.set(s, s, s);
+      });
+      if (hovered) placeTip(hovered);
+      renderer.render(scene, camera);
+    }
+    startLoop();
+    window.__ies3d = {renderer:renderer, scene:scene, camera:camera, group:group, markers:markers, body:bodyMeshes};
+    return true;
+  }
+
+  var ok = false;
+  try { ok = init3D(); } catch(e){ ok = false; }
+  if (!ok) {
+    stage.classList.add('no3d');
+    canvas.style.display = 'none';
+    if (hint) hint.textContent = 'Toque em uma região na lista abaixo';
+  }
+})();
+</script>
+</body>
+</html>
