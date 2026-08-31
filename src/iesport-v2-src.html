@@ -152,10 +152,9 @@ img{max-width:100%;display:block}
 }
 .hero-art svg{height:92%;max-height:660px;width:auto;overflow:visible}
 .cring{fill:none}
-.cring-gold{stroke:rgba(217,164,65,.32);stroke-width:1.2}
+.cring-gold{stroke:rgba(217,164,65,.45);stroke-width:1.4}
 .cring-steel{stroke:rgba(147,157,174,.17);stroke-width:1}
 .cring-dash{stroke:rgba(122,150,205,.4);stroke-width:1.5;stroke-dasharray:2 15;stroke-linecap:round}
-.cring-arc{stroke:var(--gold);stroke-opacity:.7;stroke-width:2.6;stroke-linecap:round}
 .crest-spin{transform-origin:320px 320px;animation:crestSpin 110s linear infinite}
 @keyframes crestSpin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.crest-spin{animation:none}}
@@ -198,8 +197,9 @@ img{max-width:100%;display:block}
   background:radial-gradient(closest-side, rgba(15,34,67,.5), rgba(15,34,67,.16) 58%, transparent 76%);
 }
 .stage-backdrop::after{
-  content:"";position:absolute;left:50%;bottom:5.5%;width:54%;height:26px;
-  transform:translateX(-50%);border-radius:50%;
+  /* --feety e definida no resize() do 3D: projecao dos pes do modelo no canvas */
+  content:"";position:absolute;left:50%;top:var(--feety, 84%);width:46%;height:22px;
+  transform:translate(-50%,-50%);border-radius:50%;
   background:radial-gradient(closest-side, rgba(10,23,48,.30), transparent 72%);
 }
 .sb-ring{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);border-radius:50%;aspect-ratio:1}
@@ -656,7 +656,6 @@ footer{background:var(--navy);color:var(--steel-soft)}
       </g>
       <circle class="cring cring-steel" cx="320" cy="320" r="252"/>
       <circle class="cring cring-gold" cx="320" cy="320" r="208"/>
-      <path class="cring cring-arc" d="M 222.4,503.7 A 208,208 0 0 1 120,262.7"/>
       <g transform="translate(320,324) scale(0.809) translate(-193.5,-217.5)">
         <circle cx="193.5" cy="217.5" r="185.5" fill="url(#embG)"/>
         <g clip-path="url(#embClip)" fill="#fff">
@@ -1455,6 +1454,12 @@ var GLB_B64 = '{{GLB}}';
       var zf = camera.position.z / 6.1;
       markers.forEach(function(m){ m.root.scale.setScalar(zf); });
       camera.updateProjectionMatrix();
+      /* ancora a sombra CSS exatamente sob os pes (y=0 fica no eixo de giro, estavel) */
+      camera.updateMatrixWorld();
+      var feet = new THREE.Vector3(0, 0, 0);
+      feet.project(camera);
+      var feetPx = (-feet.y + 1) / 2 * h + 6;
+      stage.parentElement.style.setProperty('--feety', feetPx + 'px');
     }
     resize();
     if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
