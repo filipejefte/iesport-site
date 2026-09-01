@@ -106,6 +106,7 @@ img{max-width:100%;display:block}
 .nav .wrap{display:flex;align-items:center;gap:28px;padding-top:14px;padding-bottom:14px}
 .nav-logo{flex:none}
 .nav-logo img{height:62px;width:auto}
+.nav-burger{display:none}
 .nav-links{display:flex;gap:26px;margin-left:auto;align-items:center}
 .nav-links a:not(.btn){
   font-size:.85rem;font-weight:700;letter-spacing:.05em;text-decoration:none;
@@ -143,13 +144,32 @@ img{max-width:100%;display:block}
   .nav-links a:not(.btn){display:inline-block;white-space:nowrap;padding:12px 0}
 }
 @media(max-width:640px){
-  /* grid: logo + botao na linha 1, trilho de links na linha 2 inteira */
-  .nav .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:6px 12px}
+  .topbar .tel{display:none}
+  /* linha unica: logo + botao WhatsApp + menu; secoes viram painel suspenso */
+  .nav .wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px 10px;padding-bottom:14px}
   .nav-links{display:contents}
-  .nav-links .btn{grid-column:2;justify-self:end;padding:9px 13px;font-size:.76rem}
-  .nav-sections{grid-column:1 / -1}
+  .nav-links .btn{grid-column:2;justify-self:end;padding:9px 13px;font-size:.78rem}
+  .nb-ext{display:none}
   .nav-logo img{height:44px}
-  .nav-sections{gap:20px;padding-bottom:8px}
+  .nav-burger{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;
+    grid-column:3;width:44px;height:44px;padding:0 11px;
+    background:none;border:1.5px solid var(--line);border-radius:6px;cursor:pointer;
+  }
+  .nb-bar{display:block;height:2px;width:100%;background:var(--navy);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+  .nav.menu-open .nb-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav.menu-open .nb-bar:nth-child(2){opacity:0}
+  .nav.menu-open .nb-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-sections{
+    display:none;position:absolute;top:100%;left:0;right:0;width:auto;z-index:60;
+    background:var(--white);border-bottom:3px solid var(--steel);
+    box-shadow:0 20px 32px -18px rgba(15,34,67,.4);
+    flex-direction:column;gap:0;padding:4px 18px 10px;margin:0;overflow:visible;
+    -webkit-mask-image:none;mask-image:none;
+  }
+  .nav.menu-open .nav-sections{display:flex}
+  .nav-links a:not(.btn){padding:14px 0;font-size:.95rem;border-bottom:1px solid var(--line)}
+  .nav-sections a:last-child{border-bottom:0}
 }
 @media(min-width:961px){.nav-sections{display:contents}}
 
@@ -617,7 +637,7 @@ footer{background:var(--navy);color:var(--steel-soft)}
 <div class="topbar">
   <div class="wrap">
     <span class="addr">Rua Braz Sampieri, 30 · Jardim Tangará · Marília, SP</span>
-    <span><b><a href="tel:+551433672555" style="color:inherit;text-decoration:none">14 3367-2555</a></b> · <a href="tel:+551433672556" style="color:inherit;text-decoration:none">14 3367-2556</a></span>
+    <span class="tel"><b><a href="tel:+551433672555" style="color:inherit;text-decoration:none">14 3367-2555</a></b> · <a href="tel:+551433672556" style="color:inherit;text-decoration:none">14 3367-2556</a></span>
     <span>seg. a sex., das 8h às 19h</span>
   </div>
 </div>
@@ -629,14 +649,17 @@ footer{background:var(--navy);color:var(--steel-soft)}
       <img src="{{LOGO}}" alt="IESPORT, Instituto de Especialidades Ortopédicas" width="478" height="200">
     </a>
     <div class="nav-links">
-      <div class="nav-sections">
+      <div class="nav-sections" id="navSections">
         <a href="#especialidades">Especialidades</a>
         <a href="#corpo-clinico">Corpo clínico</a>
         <a href="#instituto">O instituto</a>
         <a href="#convenios">Convênios</a>
         <a href="#contato">Contato</a>
       </div>
-      <a class="btn btn-navy" href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20IESPORT." target="_blank" rel="noopener noreferrer"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar pelo WhatsApp<span class="sr"> (abre em nova aba)</span></a>
+      <a class="btn btn-navy" href="https://wa.me/5514997122181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20IESPORT." target="_blank" rel="noopener noreferrer"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg>Agendar<span class="nb-ext"> pelo WhatsApp</span><span class="sr"> (abre em nova aba)</span></a>
+      <button class="nav-burger" type="button" aria-expanded="false" aria-controls="navSections" aria-label="Abrir menu de seções">
+        <span class="nb-bar" aria-hidden="true"></span><span class="nb-bar" aria-hidden="true"></span><span class="nb-bar" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
 </nav>
@@ -1165,6 +1188,34 @@ var GLB_B64 = '{{GLB}}';
   var setNavH = function(){ document.documentElement.style.setProperty('--navh', nav.offsetHeight + 'px'); };
   window.addEventListener('resize', setNavH, {passive:true});
   setNavH();
+
+  /* menu mobile (hamburguer) */
+  var burger = document.querySelector('.nav-burger');
+  if (burger) {
+    var closeMenu = function(){
+      nav.classList.remove('menu-open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Abrir menu de seções');
+    };
+    burger.addEventListener('click', function(ev){
+      ev.stopPropagation();
+      var open = nav.classList.toggle('menu-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', (open ? 'Fechar' : 'Abrir') + ' menu de seções');
+    });
+    document.querySelectorAll('.nav-sections a').forEach(function(a){
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('click', function(ev){
+      if (nav.classList.contains('menu-open') && !nav.contains(ev.target)) closeMenu();
+    });
+    document.addEventListener('keydown', function(ev){
+      if (ev.key === 'Escape') closeMenu();
+    });
+    window.addEventListener('resize', function(){
+      if (window.innerWidth > 640) closeMenu();
+    }, {passive:true});
+  }
 
   /* reveal + count-up */
   var revs = document.querySelectorAll('.rv');
