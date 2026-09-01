@@ -64,6 +64,11 @@ img{max-width:100%;display:block}
 }
 .sec{padding:96px 0;scroll-margin-top:calc(var(--navh, 80px) + 12px)}
 @media(max-width:760px){.sec{padding:64px 0}}
+@media(max-width:640px){
+  .sec{padding:48px 0}
+  /* entrelinha calibrada para a medida estreita (~41ch) */
+  body{line-height:1.58}
+}
 .sec-head{display:flex;flex-direction:column;gap:14px;max-width:720px;margin-bottom:44px}
 .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.35rem);font-weight:800}
 .sec-head p{color:var(--ink-2);font-size:1.02rem;max-width:62ch}
@@ -86,6 +91,8 @@ img{max-width:100%;display:block}
 }
 .topbar b{color:var(--white);font-weight:700}
 .topbar span{white-space:nowrap}
+/* area de toque dos telefones sem alterar a altura visual da barra */
+.topbar a{display:inline-block;padding:9px 6px;margin:-9px -4px}
 @media(max-width:780px){.topbar .addr{display:none}.topbar .wrap{justify-content:center}}
 
 /* ---------- nav ---------- */
@@ -124,16 +131,25 @@ img{max-width:100%;display:block}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media(max-width:960px){
   .nav .wrap{flex-wrap:wrap;gap:12px 18px;padding-bottom:0}
-  .nav-links{gap:16px;margin-left:auto;flex-wrap:wrap;flex:1 1 auto;min-width:0}
-  .nav-links .btn{padding:10px 16px;min-height:40px;font-size:.8rem}
+  /* basis 0: divide a primeira linha com a logo (botao a direita, trilho abaixo) */
+  .nav-links{gap:16px;margin-left:auto;flex-wrap:wrap;flex:1 1 0;min-width:0;justify-content:flex-end}
+  .nav-links .btn{padding:10px 16px;min-height:44px;font-size:.8rem}
   .nav-sections{order:3;width:100%;display:flex;gap:22px;overflow-x:auto;
-    -webkit-overflow-scrolling:touch;padding:2px 2px 12px;margin:0 -2px}
-  .nav-links a:not(.btn){display:inline-block;white-space:nowrap;padding:6px 0}
+    -webkit-overflow-scrolling:touch;padding:2px 2px 12px;margin:0 -2px;
+    /* esmaece a borda direita para sinalizar que o trilho rola */
+    -webkit-mask-image:linear-gradient(90deg, #000 calc(100% - 34px), transparent);
+    mask-image:linear-gradient(90deg, #000 calc(100% - 34px), transparent)}
+  /* alvo de toque >=44px nos links do trilho */
+  .nav-links a:not(.btn){display:inline-block;white-space:nowrap;padding:12px 0}
 }
 @media(max-width:640px){
-  .nav-logo img{height:48px}
-  .nav-links{gap:14px}
-  .nav-sections{gap:20px}
+  /* grid: logo + botao na linha 1, trilho de links na linha 2 inteira */
+  .nav .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:6px 12px}
+  .nav-links{display:contents}
+  .nav-links .btn{grid-column:2;justify-self:end;padding:9px 13px;font-size:.76rem}
+  .nav-sections{grid-column:1 / -1}
+  .nav-logo img{height:44px}
+  .nav-sections{gap:20px;padding-bottom:8px}
 }
 @media(min-width:961px){.nav-sections{display:contents}}
 
@@ -257,8 +273,9 @@ img{max-width:100%;display:block}
 .hero-facts b{color:var(--white);font-weight:800}
 .hf-sep{width:4px;height:4px;border-radius:50%;background:var(--steel);opacity:.7;flex:none}
 @media(max-width:640px){
-  .hero-facts{padding:18px 0 30px;font-size:.88rem;gap:8px 14px}
-  .hf-sep-b{display:none}
+  .hero-facts{padding:18px 0 30px;font-size:.88rem;gap:9px 14px}
+  /* no mobile os fatos empilham em linhas: separadores viram ruido */
+  .hf-sep{display:none}
 }
 
 /* ---------- instituto ---------- */
@@ -316,6 +333,10 @@ img{max-width:100%;display:block}
 .esp-cta{
   margin-top:auto;padding-top:6px;align-self:flex-start;
   font-size:.82rem;font-weight:700;color:var(--ac);text-decoration:none;
+}
+@media(max-width:640px){
+  /* alvo de toque >=44px sem mudar o ritmo visual do card */
+  .esp-cta{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px 8px 0;margin:-8px 0 -14px}
 }
 .esp-cta:hover{text-decoration:underline}
 .esp-card :is(h3,h4)::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--ac);flex:none}
@@ -400,7 +421,7 @@ img{max-width:100%;display:block}
   .docp img{filter:grayscale(0) contrast(1)}
   .docp::after{opacity:.35}
 }
-@media(max-width:560px){.docp{padding-top:78%}}
+@media(max-width:560px){.docp{padding-top:60%}.docp img{object-position:center 12%}}
 .docp .mono{
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   color:var(--white);font-size:2.2rem;font-weight:800;letter-spacing:.05em;
@@ -432,6 +453,10 @@ img{max-width:100%;display:block}
 .docs-note{
   margin-top:24px;font-size:.87rem;color:var(--ink-2);
   display:flex;gap:10px;align-items:baseline;
+}
+@media(max-width:640px){
+  .docs-note{display:block}
+  .docs-note b{display:block;margin-bottom:4px}
 }
 .docs-note b{color:var(--navy)}
 
@@ -501,8 +526,10 @@ img{max-width:100%;display:block}
 .cont-item .val a:hover{text-decoration:underline}
 .cont-item .sub{font-size:.85rem;color:var(--ink-2)}
 .cont-side{display:flex;flex-direction:column;gap:16px}
-.map-iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:1}
+.map-iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:1;background:var(--white)}
 .map-iframe.on{opacity:1;pointer-events:auto}
+/* com o embed do Google ativo, o cartao nativo ja mostra o endereco */
+.cont-map.gmaps-on .map-pill{display:none}
 .cont-map{
   position:relative;display:block;flex:1;min-height:300px;
   border-radius:8px;overflow:hidden;border:1px solid var(--line);
@@ -1183,10 +1210,13 @@ var GLB_B64 = '{{GLB}}';
     clearTimeout(flashTimer);
     flashTimer = setTimeout(function(){ c.classList.remove('flash'); }, 2600);
   }
-  /* Google Maps nativo com fallback para o mapa estatico (o preview bloqueia iframes externos) */
+  /* Google Maps nativo com fallback para o mapa estatico (o preview bloqueia iframes externos).
+     Em telas touch o iframe capturaria o gesto de rolagem (scroll trap), entao fica o mapa
+     estatico + botao "Ver rotas", que abre o app de mapas. */
   (function(){
     var slot = document.getElementById('mapSlot');
     if (!slot) return;
+    if (window.matchMedia('(pointer:coarse)').matches) return;
     var blocked = false, settled = false;
     function onViol(ev){
       /* 'google.com' (nao 'google') para nao confundir com violacoes de fonts.googleapis.com */
@@ -1205,12 +1235,17 @@ var GLB_B64 = '{{GLB}}';
     }
     frame.addEventListener('load', function(){
       setTimeout(function(){
-        if (!blocked) {
+        /* iframe bloqueado sem violacao de CSP cai em about:blank, que segue
+           acessivel; o embed real do Google e cross-origin e lanca ao acessar */
+        var real = false;
+        try { real = !frame.contentDocument; } catch (e) { real = true; }
+        if (!blocked && real) {
           frame.classList.add('on');
+          slot.classList.add('gmaps-on');
           var cr = document.getElementById('mapCredit');
           if (cr) cr.textContent = 'Google Maps';
-          settle();
         }
+        settle();
       }, 80);
     });
     document.addEventListener('securitypolicyviolation', onViol);
