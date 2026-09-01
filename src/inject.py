@@ -20,6 +20,8 @@ PHOTO_MAP = {
     'fukoshima': 'fukoshima.jpg',
     'jacob': 'jacob.jpg',
     'antoniassi': 'antoniassi.jpg',
+    'salgado': 'salgado.jpg',
+    'baldissera': 'baldissera.jpg',
 }
 
 def photo_data_uri(fname):

@@ -70,7 +70,9 @@ Corpo clínico atualizado em 01/09/2026 conforme lista da própria clínica
   as bios no ar contêm apenas o que é verificável).
 - Confirmar se o Dr. Antoniassi atende **joelho** além de quadril, os convênios
   aceitos além da Unimed e a composição societária atual.
-- Pedir **retratos** de Salgado, Reinas e Baldissera (hoje com monograma).
+- Pedir **retrato** do Dr. Reinas (hoje com monograma — não há foto profissional
+  pública). As fotos de Salgado (Doctoralia) e Baldissera (Instagram profissional)
+  vieram de perfis públicos; recomenda-se autorização para produção.
   Há um comentário com essa lista no HTML fonte, antes do rodapé.
 
 ## Créditos e licenças de terceiros
