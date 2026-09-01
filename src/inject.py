@@ -13,6 +13,11 @@ OUT = REPO / 'index.html'
 ASSETS = REPO / 'assets'
 PHOTOS = ASSETS / 'photos'
 
+# Retratos desativados por decisao editorial: nao ha conjunto consistente de fotos
+# autorizadas (direito de imagem, Codigo Civil). Quando a clinica enviar as fotos,
+# salve em assets/photos/ com os nomes abaixo e mude USE_PHOTOS para True.
+USE_PHOTOS = False
+
 PHOTO_MAP = {
     'laraya': 'laraya.jpg',
     'muriano': 'muriano.jpg',
@@ -89,7 +94,7 @@ html = html.replace('{{FACHADA_IMG}}', fac_uri)
 
 def img_repl(m):
     slug, alt = m.group(1), m.group(2)
-    uri = photo_data_uri(PHOTO_MAP.get(slug, ''))
+    uri = photo_data_uri(PHOTO_MAP.get(slug, '')) if USE_PHOTOS else None
     if uri is None:
         print('SEM FOTO:', slug)
         return ''  # mantem apenas o monograma

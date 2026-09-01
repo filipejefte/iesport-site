@@ -54,10 +54,9 @@ python src/build_map.py  # regenera assets/map.png
   os links `wa.me` usam o número com DDI: `5514997122181`).
 - O e-mail `iesport@outlook.com` veio do material público da clínica e tem fonte
   única — vale confirmar com a clínica antes de manter em produção.
-- Fotos dos médicos e da fachada vieram de materiais públicos da própria clínica
-  (site antigo, perfis profissionais e ficha do Google Maps). Para produção,
-  recomenda-se autorização formal da clínica e, idealmente, uma sessão de fotos
-  nova (alguns retratos são de baixa resolução; o do Dr. Ferro destoa do padrão).
+- As fotos da fachada e do letreiro vieram da ficha pública da clínica no Google
+  Maps — para produção, vale a autorização formal da clínica. Os cards dos
+  médicos usam monogramas por decisão editorial (ver pendências abaixo).
 
 ### Pendências para produção (conformidade CFM)
 
@@ -70,9 +69,13 @@ Corpo clínico atualizado em 01/09/2026 conforme lista da própria clínica
   as bios no ar contêm apenas o que é verificável).
 - Confirmar se o Dr. Antoniassi atende **joelho** além de quadril, os convênios
   aceitos além da Unimed e a composição societária atual.
-- Pedir **retrato** do Dr. Reinas (hoje com monograma — não há foto profissional
-  pública). As fotos de Salgado (Doctoralia) e Baldissera (Instagram profissional)
-  vieram de perfis públicos; recomenda-se autorização para produção.
+- **Fotos**: os nove cards usam monograma de propósito — não existe conjunto
+  consistente de retratos autorizados dos médicos em nenhuma fonte pública, e
+  retrato de pessoa identificável exige autorização para uso comercial (art. 20
+  do Código Civil). Pedir fotos à clínica (mesmo de celular servem — dá para
+  tratar e padronizar) ou propor um ensaio fotográfico dos nove no mesmo
+  enquadramento. Ao recebê-las: salvar em `assets/photos/` com os nomes do
+  `PHOTO_MAP` e ligar `USE_PHOTOS = True` em `src/inject.py`.
   Há um comentário com essa lista no HTML fonte, antes do rodapé.
 
 ## Créditos e licenças de terceiros
