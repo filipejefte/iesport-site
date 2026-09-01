@@ -1,7 +1,7 @@
 # IESPORT — Instituto de Especialidades Ortopédicas
 
-Site institucional de página única para o IESPORT (Marília/SP): oito ortopedistas,
-um subespecialista para cada região do corpo.
+Site institucional de página única para o IESPORT (Marília/SP): nove
+especialistas, cada um dedicado à sua área — da coluna aos pés, com hematologia.
 
 O site inteiro é **um único arquivo HTML** (`index.html`) com todos os recursos
 embutidos como data URIs — sem dependências externas além do Google Fonts (Raleway).
@@ -13,8 +13,8 @@ Netlify, Cloudflare Pages, ou a hospedagem que a clínica já usa) sem build no 
 - **Mapa 3D interativo do corpo** (Three.js + modelo GLB embutido): cada ponto
   colorido leva ao card da subespecialidade; arraste para girar, toque para navegar.
   Se WebGL não estiver disponível, cai para uma silhueta SVG estática.
-- **Hero com a identidade da marca**: silhueta com os seis pontos das regiões
-  (clicáveis) sobre anéis dourados, no navy institucional.
+- **Hero com a identidade da marca**: o emblema da clínica redesenhado em vetor,
+  sobre anéis dourados, no navy institucional.
 - **Google Maps nativo com fallback**: a página tenta carregar o embed oficial do
   Google Maps; em ambientes que bloqueiam iframes externos, mantém um mapa
   estático OpenStreetMap gerado no build.
@@ -55,8 +55,8 @@ python src/build_map.py  # regenera assets/map.png
 - O e-mail `iesport@outlook.com` veio do material público da clínica e tem fonte
   única — vale confirmar com a clínica antes de manter em produção.
 - As fotos da fachada e do letreiro vieram da ficha pública da clínica no Google
-  Maps — para produção, vale a autorização formal da clínica. Os cards dos
-  médicos usam monogramas por decisão editorial (ver pendências abaixo).
+  Maps — para produção, vale a autorização formal da clínica. Sobre os retratos
+  dos médicos, ver as pendências abaixo.
 
 ### Pendências para produção (conformidade CFM)
 
@@ -70,8 +70,8 @@ Corpo clínico atualizado em 01/09/2026 conforme lista da própria clínica
 - Confirmar se o Dr. Antoniassi atende **joelho** além de quadril, os convênios
   aceitos além da Unimed e a composição societária atual.
 - **Fotos**: retratos vindos da melhor fonte pública de cada médico (site
-  próprio: Antoniassi e Fukoshima; diretoria da SBMEE: Laraya; Doctoralia:
-  Salgado; Instagram profissional: Baldissera; site 2015 da própria clínica:
+  próprio: Antoniassi, Fukoshima e Baldissera (foto de simpósio da página
+  Quem Sou); diretoria da SBMEE: Laraya; Doctoralia: Salgado; site 2015 da própria clínica:
   Muriano, Jacob e Toma). O Dr. Reinas não tem retrato público — fica com
   monograma até a clínica enviar. Para produção, formalizar a **autorização de
   imagem** com cada médico (art. 20 do Código Civil); um ensaio fotográfico
