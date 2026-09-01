@@ -61,10 +61,16 @@ python src/build_map.py  # regenera assets/map.png
 
 ### Pendências para produção (conformidade CFM)
 
+Corpo clínico atualizado em 01/09/2026 conforme lista da própria clínica
+(9 especialistas; saíram Yanasse e Ferro, entraram Salgado, Reinas e Baldissera).
+
 - Exibir no rodapé o **nome e CRM do diretor técnico médico** da clínica.
-- Obter e exibir o **RQE** dos Drs. Muriano, Antoniassi e Ferro (os demais já têm).
-- Confirmar com a clínica os convênios aceitos além da Unimed e a grafia do
-  sobrenome "Fukoshima" nos registros do CRM.
+- Obter o **RQE** dos Drs. Muriano e Antoniassi (não publicado em fonte alguma).
+- Obter a **formação acadêmica** dos Drs. Laraya e Reinas (sem fonte pública;
+  as bios no ar contêm apenas o que é verificável).
+- Confirmar se o Dr. Antoniassi atende **joelho** além de quadril, os convênios
+  aceitos além da Unimed e a composição societária atual.
+- Pedir **retratos** de Salgado, Reinas e Baldissera (hoje com monograma).
   Há um comentário com essa lista no HTML fonte, antes do rodapé.
 
 ## Créditos e licenças de terceiros

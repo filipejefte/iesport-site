@@ -15,18 +15,18 @@ PHOTOS = ASSETS / 'photos'
 
 PHOTO_MAP = {
     'laraya': 'laraya.jpg',
-    'yanasse': 'yanasse-alt.jpg',
     'muriano': 'muriano.jpg',
     'toma': 'toma.jpg',  # retrato de 2015: mesmo padrao (jaleco, fundo claro) dos demais
     'fukoshima': 'fukoshima.jpg',
     'jacob': 'jacob.jpg',
     'antoniassi': 'antoniassi.jpg',
-    'ferro': 'ferro.jpg',
 }
 
 def photo_data_uri(fname):
+    if not fname:
+        return None
     p = PHOTOS / fname
-    if not p.exists():
+    if not p.is_file():
         return None
     im = Image.open(p).convert('RGB')
     w, h = im.size
