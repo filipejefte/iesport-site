@@ -69,13 +69,13 @@ Corpo clínico atualizado em 01/09/2026 conforme lista da própria clínica
   as bios no ar contêm apenas o que é verificável).
 - Confirmar se o Dr. Antoniassi atende **joelho** além de quadril, os convênios
   aceitos além da Unimed e a composição societária atual.
-- **Fotos**: os nove cards usam monograma de propósito — não existe conjunto
-  consistente de retratos autorizados dos médicos em nenhuma fonte pública, e
-  retrato de pessoa identificável exige autorização para uso comercial (art. 20
-  do Código Civil). Pedir fotos à clínica (mesmo de celular servem — dá para
-  tratar e padronizar) ou propor um ensaio fotográfico dos nove no mesmo
-  enquadramento. Ao recebê-las: salvar em `assets/photos/` com os nomes do
-  `PHOTO_MAP` e ligar `USE_PHOTOS = True` em `src/inject.py`.
+- **Fotos**: retratos vindos da melhor fonte pública de cada médico (site
+  próprio: Antoniassi e Fukoshima; diretoria da SBMEE: Laraya; Doctoralia:
+  Salgado; Instagram profissional: Baldissera; site 2015 da própria clínica:
+  Muriano, Jacob e Toma). O Dr. Reinas não tem retrato público — fica com
+  monograma até a clínica enviar. Para produção, formalizar a **autorização de
+  imagem** com cada médico (art. 20 do Código Civil); um ensaio fotográfico
+  padronizado dos nove é o upgrade ideal.
   Há um comentário com essa lista no HTML fonte, antes do rodapé.
 
 ## Créditos e licenças de terceiros

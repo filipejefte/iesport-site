@@ -13,10 +13,10 @@ OUT = REPO / 'index.html'
 ASSETS = REPO / 'assets'
 PHOTOS = ASSETS / 'photos'
 
-# Retratos desativados por decisao editorial: nao ha conjunto consistente de fotos
-# autorizadas (direito de imagem, Codigo Civil). Quando a clinica enviar as fotos,
-# salve em assets/photos/ com os nomes abaixo e mude USE_PHOTOS para True.
-USE_PHOTOS = False
+# Retratos das melhores fontes publicas mapeadas (site proprio > institucional >
+# Doctoralia > site 2015 da clinica); Reinas sem retrato publico fica com monograma.
+# Para produção, formalizar autorizacao de imagem com a clinica.
+USE_PHOTOS = True
 
 PHOTO_MAP = {
     'laraya': 'laraya.jpg',
@@ -37,7 +37,7 @@ def photo_data_uri(fname):
         return None
     im = Image.open(p).convert('RGB')
     w, h = im.size
-    if max(w, h) < 300:  # retratos pequenos de 2015: upscale suave + nitidez
+    if max(w, h) <= 320:  # retratos pequenos (2015, SBMEE): upscale suave + nitidez
         im = im.resize((w * 2, h * 2), Image.LANCZOS)
         im = im.filter(ImageFilter.UnsharpMask(radius=1.4, percent=68, threshold=2))
     elif max(w, h) > 560:
