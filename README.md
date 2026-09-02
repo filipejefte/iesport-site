@@ -32,6 +32,9 @@ src/
   inject.py             build: embute logos, fotos, 3D e mapa no HTML
   build_map.py          gera assets/map.png a partir de tiles OpenStreetMap
 assets/                 logos, fotos, Three.js, modelo 3D, mapa
+  og.jpg                card de compartilhamento 1200x630 (precisa de URL absoluta)
+  favicon.png/.ico      ícone, embutido como data URI no build
+  apple-touch-icon.png  ícone iOS, também embutido
 ```
 
 ## Build
@@ -40,6 +43,34 @@ assets/                 logos, fotos, Three.js, modelo 3D, mapa
 pip install Pillow
 python src/inject.py     # gera index.html na raiz
 ```
+
+### Antes de publicar como site oficial
+
+Duas mudanças, ambas em arquivo versionado:
+
+1. `src/inject.py` — trocar `BASE_URL` pelo domínio definitivo. Essa constante
+   alimenta o `canonical`, o Open Graph e os dados estruturados de uma vez.
+2. `src/iesport-v2-src.html` — remover a linha
+   `<meta name="robots" content="noindex,nofollow">`, que hoje mantém a
+   demonstração fora dos buscadores.
+
+Depois de publicar, rodar o [debugger do Facebook](https://developers.facebook.com/tools/debug/)
+na URL nova ("Scrape Again") para o WhatsApp buscar o card atualizado, e o
+[Rich Results Test](https://search.google.com/test/rich-results) para conferir o
+`MedicalClinic` com os nove `Physician`.
+
+### Peso da página
+
+| | bruto | gzip |
+|---|---|---|
+| página inteira | 2.709 KB | 1.570 KB |
+| bloco 3D (Three.js + loader + GLB) | 1.843 KB | — |
+| site sem o 3D | 866 KB | 611 KB |
+
+O mapa 3D é 68% do peso. Se o carregamento em rede móvel virar problema,
+a saída é servir `three.min.js`, `gltfloader.js` e `human.glb` como arquivos
+separados, carregados sob demanda quando a seção de especialidades entra na
+tela. Custa a propriedade de arquivo único; devolve ~1,8 MB no primeiro acesso.
 
 Para atualizar o mapa estático (só é preciso se o endereço mudar):
 

@@ -8,11 +8,48 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap">
+
+<link rel="canonical" href="{{BASE}}/">
+
+<!-- DEMONSTRACAO: manter fora dos buscadores ate a publicacao no dominio proprio.
+     REMOVER esta linha no dia em que o site entrar no ar como oficial. -->
+<meta name="robots" content="noindex,nofollow">
+
+<!-- card de compartilhamento (WhatsApp, Facebook, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IESPORT · Instituto de Especialidades Ortopédicas">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="{{BASE}}/">
+<meta property="og:title" content="IESPORT · Instituto de Especialidades Ortopédicas · Marília">
+<meta property="og:description" content="Cada região do corpo tem o seu especialista. Nove especialistas, dez áreas de atuação, agendamento pelo WhatsApp.">
+<meta property="og:image" content="{{BASE}}/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Letreiro do Instituto de Especialidades Ortopédicas, em Marília">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IESPORT · Instituto de Especialidades Ortopédicas · Marília">
+<meta name="twitter:description" content="Cada região do corpo tem o seu especialista. Nove especialistas, dez áreas de atuação, agendamento pelo WhatsApp.">
+<meta name="twitter:image" content="{{BASE}}/assets/og.jpg">
+
+<meta name="theme-color" content="#0F2243">
+<link rel="icon" href="{{FAVICON}}" sizes="any">
+<link rel="apple-touch-icon" href="{{APPLEICON}}">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
+  "@id": "{{BASE}}/#clinica",
   "name": "IESPORT · Instituto de Especialidades Ortopédicas",
+  "alternateName": "IESPORT",
+  "url": "{{BASE}}/",
+  "image": "{{BASE}}/assets/og.jpg",
+  "logo": "{{BASE}}/assets/favicon.png",
+  "description": "Centro de especialidades ortopédicas em Marília, SP, com nove especialistas e dez áreas de atuação: ombro e cotovelo, mão e punho, coluna, quadril, joelho, pé e tornozelo, trauma ortopédico, oncologia ortopédica, medicina do esporte e hematologia.",
+  "telephone": "+55-14-3367-2555",
+  "priceRange": "$$",
+  "currenciesAccepted": "BRL",
+  "isAcceptingNewPatients": true,
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Rua Braz Sampieri, 30 - Jardim Tangará",
@@ -21,19 +58,40 @@
     "postalCode": "17516-026",
     "addressCountry": "BR"
   },
-  "telephone": "+55-14-3367-2555",
-  "openingHours": "Mo-Fr 08:00-19:00",
+  "geo": { "@type": "GeoCoordinates", "latitude": -22.221418, "longitude": -49.937647 },
+  "areaServed": { "@type": "City", "name": "Marília" },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00", "closes": "19:00"
+  }],
+  "sameAs": [
+    "https://www.facebook.com/iesportmarilia/",
+    "https://www.instagram.com/iesportmarilia/"
+  ],
   "medicalSpecialty": ["Orthopedic", "Hematologic"],
-  "physician": [
-    {"@type": "Physician", "name": "Dr. Marcos Henrique Ferreira Laraya", "identifier": "CRM 86090-SP"},
-    {"@type": "Physician", "name": "Dr. Marcos Vinicius Muriano da Silva", "identifier": "CRM 116581-SP"},
-    {"@type": "Physician", "name": "Dr. Ricardo Toma", "identifier": "CRM 116721-SP"},
-    {"@type": "Physician", "name": "Dr. Anderson Ballestero Fukoshima", "identifier": "CRM 135274-SP"},
-    {"@type": "Physician", "name": "Dr. Eduardo Martinelli Jacob", "identifier": "CRM 125521-SP"},
-    {"@type": "Physician", "name": "Dr. Rodrigo da Silveira Antoniassi", "identifier": "CRM 156365-SP"},
-    {"@type": "Physician", "name": "Dr. Fernando Salgado Martins", "identifier": "CRM 177764-SP"},
-    {"@type": "Physician", "name": "Dr. Gustavo Serra Reinas", "identifier": "CRM 129739-SP"},
-    {"@type": "Physician", "name": "Dra. Renata Baldissera Cardoso", "identifier": "CRM 73499-SP"}
+  "availableService": [
+    { "@type": "MedicalProcedure", "name": "Consulta em ortopedia e traumatologia" },
+    { "@type": "MedicalProcedure", "name": "Cirurgia da coluna vertebral" },
+    { "@type": "MedicalProcedure", "name": "Cirurgia de ombro e cotovelo" },
+    { "@type": "MedicalProcedure", "name": "Cirurgia da mão e do punho" },
+    { "@type": "MedicalProcedure", "name": "Cirurgia do quadril e do joelho" },
+    { "@type": "MedicalProcedure", "name": "Cirurgia do pé e do tornozelo" },
+    { "@type": "MedicalProcedure", "name": "Trauma ortopédico" },
+    { "@type": "MedicalProcedure", "name": "Oncologia ortopédica" },
+    { "@type": "MedicalProcedure", "name": "Medicina do esporte" },
+    { "@type": "MedicalProcedure", "name": "Hematologia" }
+  ],
+  "employee": [
+    {"@type":"Physician","name":"Dr. Marcos Henrique Ferreira Laraya","identifier":"CRM 86090-SP","medicalSpecialty":"Orthopedic","knowsAbout":["Cirurgia do joelho","Medicina do esporte"]},
+    {"@type":"Physician","name":"Dr. Marcos Vinicius Muriano da Silva","identifier":"CRM 116581-SP","medicalSpecialty":"Orthopedic","knowsAbout":["Cirurgia de ombro e cotovelo","Medicina do esporte"]},
+    {"@type":"Physician","name":"Dr. Ricardo Toma","identifier":"CRM 116721-SP","medicalSpecialty":"Orthopedic","knowsAbout":["Trauma ortopédico","Oncologia ortopédica"]},
+    {"@type":"Physician","name":"Dr. Anderson Ballestero Fukoshima","identifier":"CRM 135274-SP","medicalSpecialty":"Orthopedic","knowsAbout":["Cirurgia da coluna vertebral"]},
+    {"@type":"Physician","name":"Dr. Eduardo Martinelli Jacob","identifier":"CRM 125521-SP","medicalSpecialty":"Orthopedic","knowsAbout":["Cirurgia da mão e do punho"]},
+    {"@type":"Physician","name":"Dr. Rodrigo da Silveira Antoniassi","identifier":"CRM 156365-SP","medicalSpecialty":"Orthopedic","knowsAbout":["Cirurgia do quadril","Cirurgia do joelho"]},
+    {"@type":"Physician","name":"Dr. Fernando Salgado Martins","identifier":"CRM 177764-SP","medicalSpecialty":"Orthopedic","knowsAbout":["Cirurgia do pé e do tornozelo"]},
+    {"@type":"Physician","name":"Dr. Gustavo Serra Reinas","identifier":"CRM 129739-SP","medicalSpecialty":"Orthopedic","knowsAbout":["Cirurgia da coluna vertebral"]},
+    {"@type":"Physician","name":"Dra. Renata Baldissera Cardoso","identifier":"CRM 73499-SP","medicalSpecialty":"Hematologic","knowsAbout":["Hematologia","Onco-hematologia"]}
   ]
 }
 </script>

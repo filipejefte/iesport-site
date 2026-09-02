@@ -13,6 +13,11 @@ OUT = REPO / 'index.html'
 ASSETS = REPO / 'assets'
 PHOTOS = ASSETS / 'photos'
 
+# URL base do site. Usada no canonical, no Open Graph e nos dados estruturados.
+# NA PUBLICACAO: trocar por 'https://www.iesport.com.br' e remover a linha
+# <meta name="robots" content="noindex,nofollow"> do src/iesport-v2-src.html.
+BASE_URL = 'https://filipejefte.github.io/iesport-site'
+
 # Retratos das melhores fontes publicas mapeadas (site proprio > institucional >
 # Doctoralia > site 2015 da clinica); Reinas sem retrato publico fica com monograma.
 # Para produção, formalizar autorizacao de imagem com a clinica.
@@ -101,6 +106,14 @@ def img_repl(m):
     return f'<img src="{uri}" alt="{alt}">'
 
 html = re.sub(r'\{\{IMG_([a-z]+)\|([^}]*)\}\}', img_repl, html)
+
+html = html.replace('{{BASE}}', BASE_URL)
+
+fav = base64.b64encode((ASSETS / 'favicon.png').read_bytes()).decode()
+html = html.replace('{{FAVICON}}', 'data:image/png;base64,' + fav)
+apple = base64.b64encode((ASSETS / 'apple-touch-icon.png').read_bytes()).decode()
+html = html.replace('{{APPLEICON}}', 'data:image/png;base64,' + apple)
+print(f'favicon embutido ({len(fav)/1024:.0f} KB base64)')
 
 leftover = re.findall(r'\{\{[A-Z_]+', html)
 assert not leftover, f'placeholders restantes: {leftover}'
